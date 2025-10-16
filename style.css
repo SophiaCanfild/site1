@@ -57,7 +57,7 @@ section{padding-top:40px;padding-bottom:60px}
 /* Background image: mostrar inteira (não cortar) */
 .atividades-bg{
   position:absolute;inset:0;z-index:1;
-  background-image:url("images/section3.jpg");
+  background-image:url("imagem3.jpeg");
   background-repeat:no-repeat;
   background-position:center top;
   background-size:contain; /* mostra a imagem inteira sem cortar */
