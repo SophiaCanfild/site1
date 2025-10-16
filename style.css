@@ -1,94 +1,109 @@
-/* =========================
-   Reset & base
-   ========================= */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html,body { width: 100%; height: 100%; font-family: "PT Serif", serif; color: #162833; }
-body { background: #7E9DA3; /* base azul-petróleo claro das imagens */ }
+/* Reset e base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102836}
 
-/* tipografia global */
-.top-label { font-family: "PT Serif", serif; color: #F4EBD4; opacity: 0.95; font-size: 18px; margin-bottom: 30px; }
-h1, h2, h3, .section-big, .atividades-title, .hero-title, .footer-title { font-family: "Marcellus", serif; color: #F4EBD4; }
-.muted { font-size: 12px; color: rgba(22,40,51,0.7); }
+/* Tipografia */
+:root{
+  --cream:#F6EFD8;
+  --dark:#102836;
+  --muted-bg:#92A9AE;
+}
+.top-label{font-family:"Marcellus",serif;color:var(--cream);font-size:20px;}
 
-/* ====== HERO (seção 1) ====== */
-.hero { width: 100vw; min-height: 920px; display: flex; align-items: center; justify-content: center; background: #5B7580; }
-.hero-inner { width: 1000px; display: grid; grid-template-columns: 1fr 520px; gap: 40px; align-items: center; }
+/* --- HERO (Seção 1) --- */
+.hero{width:100vw;background:#5B7580;display:flex;justify-content:center;padding:60px 0 40px 0}
+.hero-inner{width:1100px;display:grid;grid-template-columns:1fr 540px;gap:30px;align-items:start;position:relative}
 
-/* left column */
-.hero-left { padding-left: 10px; }
-.hero-title { font-size: 72px; line-height: 0.95; color: #F6EFD8; margin-bottom: 30px; }
-.hero-desc { font-size: 16px; color: #F6EFD8; max-width: 540px; margin-bottom: 40px; opacity: 0.95; }
-.btn-ghost {
-  background: #F6EFD8; color: #16303a; border: none;
-  padding: 18px 54px; border-radius: 40px; font-family: "PT Serif"; font-size: 16px;
-  box-shadow: none; cursor: pointer;
+/* Top label (moved to top-left of hero area) */
+.hero-left{padding-left:10px;position:relative}
+.top-label{position:absolute;left:0;top:-24px;font-family:"Marcellus",serif;color:var(--cream);font-size:18px}
+
+/* Hero title & text */
+.hero-title{font-family:"Marcellus",serif;font-size:72px;line-height:0.95;color:var(--cream);margin-top:12px;margin-bottom:28px;margin-left:6px}
+.hero-desc{font-size:16px;color:var(--cream);max-width:560px;margin-bottom:36px;margin-left:6px;opacity:0.95}
+
+/* Move content um pouco mais para a esquerda (mais espaço entre texto e imagem) */
+.hero-inner{padding-left:48px}
+
+/* Botão */
+.btn-ghost{
+  background:var(--cream);color:var(--dark);border:none;padding:16px 54px;border-radius:40px;font-family:"PT Serif";font-size:16px;cursor:pointer
 }
 
-/* right column image */
-.hero-right { width: 520px; height: 680px; overflow: hidden; background: #ccc; display:flex; align-items:flex-start; justify-content:center; }
-.hero-right img { width: 520px; object-fit: cover; display:block; }
+/* Imagem direita - manter proporção e não cortar */
+.hero-right{width:540px;height:700px;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:#ccc}
+.hero-right img{width:540px;height:auto;display:block}
 
-/* ====== SEÇÃO 2: Destaques ====== */
-.destaques { width: 100vw; min-height: 520px; padding: 70px 0; background: #92A9AE; display:flex; align-items:flex-start; justify-content:center; }
-.section-title { font-size: 62px; color: #0f2340; margin-bottom: 30px; margin-left: 60px; width: 1000px; }
-.cards { width: 1000px; display:flex; gap: 30px; justify-content:space-between; margin-top: 10px; }
-.card { width: 320px; text-align:center; background: transparent; }
-.card img { width: 100%; height: 320px; object-fit: cover; border: 6px solid rgba(0,0,0,0.08); }
-.card figcaption { margin-top: 18px; font-family: "Marcellus"; font-size: 28px; color: #0f2340; }
+/* --- Espaçamento entre seções (sutil, uniforme) --- */
+section{padding-top:40px;padding-bottom:60px}
 
-/* ====== SEÇÃO 3: Atividades (full-width image bg) ====== */
-.atividades { position: relative; width: 100vw; height: 480px; overflow: hidden; display:flex; align-items:center; justify-content:center; }
-.atividades .bg-image { position:absolute; inset:0; z-index:0; display:block; }
-.atividades .bg-image img { width:100%; height:100%; object-fit:cover; filter: brightness(0.45); transform: none; }
-.center-content { position:relative; z-index:2; text-align:center; color: #F6EFD8; }
-.atividades-title { font-size: 64px; margin-bottom: 30px; }
-.btn-primary {
-  background: #F6EFD8; color: #16303a; border-radius: 40px; padding: 20px 60px; border: none;
-  font-family: "PT Serif"; font-size: 16px; cursor: pointer;
+/* --- DESTAQUES (Seção 2) --- */
+.destaques{background:#92A9AE;display:flex;justify-content:center}
+.destaques-inner{width:1100px}
+.section-title{font-family:"Marcellus",serif;font-size:62px;color:var(--dark);margin-bottom:34px}
+
+/* Cards: título acima, cards abaixo (centralizados) */
+.cards{display:flex;gap:34px;justify-content:space-between;align-items:start}
+.card{width:340px;text-align:center}
+.card img{width:100%;height:auto;border:6px solid rgba(0,0,0,0.06);border-radius:2px;display:block}
+.card figcaption{margin-top:18px;font-family:"Marcellus",serif;font-size:28px;color:var(--dark)}
+
+/* --- ATIVIDADES (Seção 3) --- */
+.atividades{position:relative;display:flex;align-items:center;justify-content:center;height:520px;overflow:visible;background:transparent}
+.atividades-inner{position:relative;z-index:2;text-align:center}
+.atividades-title{font-family:"Marcellus",serif;font-size:64px;color:var(--cream);margin-bottom:22px}
+.btn-primary{background:var(--cream);color:var(--dark);border-radius:40px;padding:18px 56px;border:none;font-family:"PT Serif";font-size:16px;cursor:pointer}
+
+/* Background image: mostrar inteira (não cortar) */
+.atividades-bg{
+  position:absolute;inset:0;z-index:1;
+  background-image:url("images/section3.jpg");
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:contain; /* mostra a imagem inteira sem cortar */
+  opacity:1;
+  pointer-events:none;
 }
-.btn-primary.small { padding: 14px 36px; }
 
-/* thin dividing line like in the image (subtle) */
-.atividades::after {
-  content: ""; position:absolute; bottom:0; left:10%; right:10%; height:2px; background: rgba(255,255,255,0.08);
+/* Linha divisória sutil (abaixo da imagem) */
+.atividades::after{content:"";position:absolute;left:6%;right:6%;bottom:-2px;height:2px;background:rgba(255,255,255,0.06);z-index:3}
+
+/* --- CONTATO (Seção 4) --- */
+.contato{background:#8EA6AA;display:flex;justify-content:center}
+.contato-inner{width:1100px;display:flex;gap:40px;align-items:flex-start}
+
+/* esquerda: redes sociais */
+.contato-left{width:420px;padding-left:6px}
+.redes-title{font-family:"Marcellus",serif;font-size:28px;color:var(--dark);margin-bottom:22px}
+.social-icons{display:flex;gap:40px;align-items:center}
+.social-icons img{width:120px;opacity:0.6}
+
+/* direita: formulário */
+.contato-right{flex:1}
+.section-big{font-family:"Marcellus",serif;font-size:72px;color:var(--dark);line-height:0.95;margin-bottom:22px}
+.contact-form label{display:block;font-size:14px;color:var(--dark);margin-bottom:8px;font-weight:700}
+.two-cols{display:flex;gap:18px;margin-bottom:12px}
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea{
+  width:100%;padding:14px 18px;border-radius:24px;border:2px solid rgba(16,40,54,0.6);background:rgba(255,255,255,0.06);font-family:"PT Serif";font-size:14px;color:var(--dark);outline:none
 }
+.contact-form textarea{border-radius:20px;padding:18px;height:140px;resize:none}
+.btn-ghost.small{margin-top:18px}
 
-/* ====== SEÇÃO 4: Contato ====== */
-.contato { width: 100vw; min-height: 720px; background: #8EA6AA; display:flex; align-items:flex-start; justify-content:center; padding: 50px 0; }
-.contato-left { width: 440px; padding-left: 60px; }
-.section-big { font-size: 72px; color: #102836; line-height: 0.95; }
-.contato-right { width: 640px; padding-left: 40px; }
+/* --- FOOTER --- */
+.footer{width:100%;background:#173842;padding:48px 0;color:var(--cream)}
+.footer-inner{width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.footer-title{font-family:"Marcellus",serif;font-size:44px}
+.footer-illu{width:160px;margin-bottom:12px}
+.footer-links a{color:var(--cream);text-decoration:underline;font-family:"PT Serif"}
 
-/* redes sociais area */
-.redes-title { font-family: "Marcellus"; font-size: 28px; color: #102836; margin-bottom: 30px; }
-.social-icons { display:flex; gap: 80px; align-items:center; margin-bottom: 30px; }
-.social-icons img { width: 120px; opacity: 0.6; }
+/* newsletter */
+.footer-right{width:360px}
+.newsletter input{flex:1;padding:16px;border-radius:4px;border:none;font-size:14px}
 
-/* form */
-.contact-form label { display:block; font-size: 14px; color: #102836; margin-bottom:8px; font-weight:700; }
-.two-cols { display:flex; gap:18px; margin-bottom:12px; }
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  width:100%; padding:14px 18px; border-radius: 24px; border:2px solid rgba(16,40,54,0.6); background: rgba(255,255,255,0.06);
-  font-family:"PT Serif"; font-size:14px; color:#102836; outline:none;
+/* pequenas correções visuais para preservar o layout fixo */
+@media (max-width:1100px){ /* apenas para evitar quebra extrema ao visualizar em telas pequenas */
+  .hero-inner{grid-template-columns:1fr 420px}
+  .hero-right{width:420px;height:560px}
+  .hero-right img{width:420px}
+  .cards{gap:20px}
 }
-.contact-form textarea { border-radius: 20px; padding:18px; height:140px; resize:none; }
-.btn-ghost.small { margin-top:18px; }
-
-/* ====== FOOTER ====== */
-.footer { width:100vw; background: #173842; padding: 48px 0; color: #F6EFD8; }
-.footer-inner { width:1000px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:30px; }
-.footer-left { width: 320px; }
-.footer-title { font-size:44px; color:#F6EFD8; }
-.footer-center { width: 220px; text-align:center; }
-.footer-illu { width: 160px; margin-bottom: 12px; }
-.footer-links { display:flex; flex-direction:column; gap:8px; }
-.footer-links a { color:#F6EFD8; text-decoration:underline; font-family:"PT Serif"; }
-
-/* newsletter right */
-.footer-right { width: 360px; }
-.newsletter-text { font-size:14px; color:#F6EFD8; margin-bottom:12px; }
-.newsletter { margin-top:12px; display:flex; gap:18px; align-items:center; }
-.newsletter input { flex:1; padding: 16px; border-radius:4px; border:none; font-size:14px; }
-

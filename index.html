@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Curso Técnico — Layout Fixo</title>
 
-  <!-- Google Fonts: Marcellus (titles) & PT Serif (body) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ===== SEÇÃO 1: Hero com texto à esquerda e imagem à direita ===== -->
+
+  <!-- ===== SEÇÃO 1: HERO com texto à esquerda e imagem à direita ===== -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-left">
@@ -31,80 +31,77 @@
       </div>
 
       <div class="hero-right">
-        <!-- A imagem de demonstração — substitua images/section1.jpg -->
-        <img src="imagem1.jpeg" alt="Sala e decoração" />
+        <img src="imagem1.jpeg" alt="Sala e decoração">
       </div>
     </div>
   </section>
 
-  <!-- ===== SEÇÃO 2: Destaques com 3 cards ===== -->
+  <!-- ===== SEÇÃO 2: Destaques com 3 cards (título acima, cards abaixo) ===== -->
   <section class="destaques">
-    <h2 class="section-title">Destaques</h2>
+    <div class="destaques-inner">
+      <h2 class="section-title">Destaques</h2>
 
-    <div class="cards">
-      <figure class="card">
-        <img src="imagem2.1.jpeg" alt="Professores" />
-        <figcaption>Professores</figcaption>
-      </figure>
+      <div class="cards">
+        <figure class="card">
+          <img src="imagem2.1.jpeg" alt="Professores">
+          <figcaption>Professores</figcaption>
+        </figure>
 
-      <figure class="card">
-        <img src="imagem2.2.jpeg" alt="Projetos" />
-        <figcaption>Projetos</figcaption>
-      </figure>
+        <figure class="card">
+          <img src="imagem2.2.jpeg" alt="Projetos">
+          <figcaption>Projetos</figcaption>
+        </figure>
 
-      <figure class="card">
-        <img src="imagem2.3.png" alt="Escola" />
-        <figcaption>Escola</figcaption>
-      </figure>
+        <figure class="card">
+          <img src="imagem2.3.png" alt="Escola">
+          <figcaption>Escola</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <!-- ===== SEÇÃO 3: Full-width hero com background escuro e botão central ===== -->
+  <!-- ===== SEÇÃO 3: Atividades — full-width hero com imagem aparecendo inteira ===== -->
   <section class="atividades">
-    <div class="bg-image">
-      <!-- imagem de fundo; substitua images/section3.jpg -->
-      <img src="imagem3.jpeg" alt="" />
-    </div>
-
-    <div class="center-content">
+    <div class="atividades-inner">
       <h2 class="atividades-title">Um pouco sobre nossas atividades</h2>
       <button class="btn-primary" id="btn-clique">Clique aqui</button>
     </div>
+    <div class="atividades-bg" aria-hidden="true"></div>
   </section>
 
-  <!-- ===== SEÇÃO 4: Contato & redes sociais ===== -->
+  <!-- ===== SEÇÃO 4: Contato & redes sociais (layout corrigido) ===== -->
   <section class="contato">
-    <div class="contato-left">
-      <h2 class="section-big">Converse<br />conosco</h2>
-    </div>
-
-    <div class="contato-right">
-      <div class="redes">
+    <div class="contato-inner">
+      <div class="contato-left">
+        <!-- Siga-nos nas redes sociais (agora à esquerda) -->
         <h3 class="redes-title">Siga-nos nas redes sociais</h3>
-
         <div class="social-icons">
-          <!-- ícones grandes (use SVG ou imagens) -->
-          <img src="insta.png" alt="Instagram" />
-          <img src="face.png" alt="Facebook" />
-          <img src="whats.png" alt="WhatsApp" />
+          <img src="insta.png" alt="Instagram">
+          <img src="face.png" alt="Facebook">
+          <img src="whats.png" alt="WhatsApp">
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="return false;">
-        <label>Nome <span class="muted">(obrigatório)</span></label>
-        <div class="two-cols">
-          <input type="text" placeholder="Nome" />
-          <input type="text" placeholder="Sobrenome" />
-        </div>
+      <div class="contato-right">
+        <!-- Converse conosco (agora à direita, acima do formulário) -->
+        <h2 class="section-big">Converse<br />conosco</h2>
 
-        <label>E-mail <span class="muted">(obrigatório)</span></label>
-        <input type="email" placeholder="Seu e-mail" />
+        <form class="contact-form" onsubmit="return false;">
+          <label>Nome <span class="muted">(obrigatório)</span></label>
+          <div class="two-cols">
+            <input type="text" placeholder="Nome">
+            <input type="text" placeholder="Sobrenome">
+          </div>
 
-        <label>Mensagem <span class="muted">(obrigatório)</span></label>
-        <textarea rows="5" placeholder="Escreva sua mensagem..."></textarea>
+          <label>E-mail <span class="muted">(obrigatório)</span></label>
+          <input type="email" placeholder="Seu e-mail">
 
-        <button class="btn-ghost small" id="btn-enviar">Enviar</button>
-      </form>
+          <label>Mensagem <span class="muted">(obrigatório)</span></label>
+          <textarea placeholder="Escreva sua mensagem..."></textarea>
+
+          <button class="btn-ghost small" id="btn-enviar">Enviar</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -116,7 +113,7 @@
       </div>
 
       <div class="footer-center">
-        <img src="imagem5.png" alt="Ilustração" class="footer-illu" />
+        <img src="imagem5.png" alt="Ilustração" class="footer-illu">
         <nav class="footer-links">
           <a href="#">Siga-nos</a>
           <a href="#">Facebook</a>
@@ -128,7 +125,7 @@
         <p class="newsletter-text">Cadastre seu endereço de e-mail para receber novidades e atualizações.</p>
 
         <div class="newsletter">
-          <input type="email" placeholder="Endereço de e-mail" />
+          <input type="email" placeholder="Endereço de e-mail">
           <button class="btn-primary small" id="btn-cadastre">Cadastre-se</button>
         </div>
       </div>
@@ -138,4 +135,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
