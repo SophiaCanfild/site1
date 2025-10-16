@@ -1,1 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Curso Técnico — Layout Fixo</title>
+
+  <!-- Google Fonts: Marcellus (titles) & PT Serif (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== SEÇÃO 1: Hero com texto à esquerda e imagem à direita ===== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="top-label">Curso Técnico de Desenvolvimento de Sistemas</div>
+
+        <h1 class="hero-title">
+          Explore o Curso de<br />
+          Desenvolvimento
+        </h1>
+
+        <p class="hero-desc">
+          Descubra o futuro da educação com o nosso curso técnico, projetado para atender às suas necessidades de aprendizado. Com uma variedade de disciplinas e especialistas na área, oferecemos uma oportunidade única de desenvolvimento profissional e pessoal.
+        </p>
+
+        <button class="btn-ghost" id="btn-saiba">Saiba mais</button>
+      </div>
+
+      <div class="hero-right">
+        <!-- A imagem de demonstração — substitua images/section1.jpg -->
+        <img src="images/section1.jpg" alt="Sala e decoração" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 2: Destaques com 3 cards ===== -->
+  <section class="destaques">
+    <h2 class="section-title">Destaques</h2>
+
+    <div class="cards">
+      <figure class="card">
+        <img src="images/section2-1.jpg" alt="Professores" />
+        <figcaption>Professores</figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="images/section2-2.jpg" alt="Projetos" />
+        <figcaption>Projetos</figcaption>
+      </figure>
+
+      <figure class="card">
+        <img src="images/section2-3.jpg" alt="Escola" />
+        <figcaption>Escola</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 3: Full-width hero com background escuro e botão central ===== -->
+  <section class="atividades">
+    <div class="bg-image">
+      <!-- imagem de fundo; substitua images/section3.jpg -->
+      <img src="images/section3.jpg" alt="" />
+    </div>
+
+    <div class="center-content">
+      <h2 class="atividades-title">Um pouco sobre nossas atividades</h2>
+      <button class="btn-primary" id="btn-clique">Clique aqui</button>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 4: Contato & redes sociais ===== -->
+  <section class="contato">
+    <div class="contato-left">
+      <h2 class="section-big">Converse<br />conosco</h2>
+    </div>
+
+    <div class="contato-right">
+      <div class="redes">
+        <h3 class="redes-title">Siga-nos nas redes sociais</h3>
+
+        <div class="social-icons">
+          <!-- ícones grandes (use SVG ou imagens) -->
+          <img src="images/icon-instagram.png" alt="Instagram" />
+          <img src="images/icon-facebook.png" alt="Facebook" />
+          <img src="images/icon-whatsapp.png" alt="WhatsApp" />
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="return false;">
+        <label>Nome <span class="muted">(obrigatório)</span></label>
+        <div class="two-cols">
+          <input type="text" placeholder="Nome" />
+          <input type="text" placeholder="Sobrenome" />
+        </div>
+
+        <label>E-mail <span class="muted">(obrigatório)</span></label>
+        <input type="email" placeholder="Seu e-mail" />
+
+        <label>Mensagem <span class="muted">(obrigatório)</span></label>
+        <textarea rows="5" placeholder="Escreva sua mensagem..."></textarea>
+
+        <button class="btn-ghost small" id="btn-enviar">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== SEÇÃO 5: Footer com newsletter ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <h2 class="footer-title">Desenvolvimento de<br />sistemas</h2>
+      </div>
+
+      <div class="footer-center">
+        <img src="images/illustration.png" alt="Ilustração" class="footer-illu" />
+        <nav class="footer-links">
+          <a href="#">Siga-nos</a>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+        </nav>
+      </div>
+
+      <div class="footer-right">
+        <p class="newsletter-text">Cadastre seu endereço de e-mail para receber novidades e atualizações.</p>
+
+        <div class="newsletter">
+          <input type="email" placeholder="Endereço de e-mail" />
+          <button class="btn-primary small" id="btn-cadastre">Cadastre-se</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 

@@ -1,1 +1,94 @@
+/* =========================
+   Reset & base
+   ========================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { width: 100%; height: 100%; font-family: "PT Serif", serif; color: #162833; }
+body { background: #7E9DA3; /* base azul-petróleo claro das imagens */ }
+
+/* tipografia global */
+.top-label { font-family: "PT Serif", serif; color: #F4EBD4; opacity: 0.95; font-size: 18px; margin-bottom: 30px; }
+h1, h2, h3, .section-big, .atividades-title, .hero-title, .footer-title { font-family: "Marcellus", serif; color: #F4EBD4; }
+.muted { font-size: 12px; color: rgba(22,40,51,0.7); }
+
+/* ====== HERO (seção 1) ====== */
+.hero { width: 100vw; min-height: 920px; display: flex; align-items: center; justify-content: center; background: #5B7580; }
+.hero-inner { width: 1000px; display: grid; grid-template-columns: 1fr 520px; gap: 40px; align-items: center; }
+
+/* left column */
+.hero-left { padding-left: 10px; }
+.hero-title { font-size: 72px; line-height: 0.95; color: #F6EFD8; margin-bottom: 30px; }
+.hero-desc { font-size: 16px; color: #F6EFD8; max-width: 540px; margin-bottom: 40px; opacity: 0.95; }
+.btn-ghost {
+  background: #F6EFD8; color: #16303a; border: none;
+  padding: 18px 54px; border-radius: 40px; font-family: "PT Serif"; font-size: 16px;
+  box-shadow: none; cursor: pointer;
+}
+
+/* right column image */
+.hero-right { width: 520px; height: 680px; overflow: hidden; background: #ccc; display:flex; align-items:flex-start; justify-content:center; }
+.hero-right img { width: 520px; object-fit: cover; display:block; }
+
+/* ====== SEÇÃO 2: Destaques ====== */
+.destaques { width: 100vw; min-height: 520px; padding: 70px 0; background: #92A9AE; display:flex; align-items:flex-start; justify-content:center; }
+.section-title { font-size: 62px; color: #0f2340; margin-bottom: 30px; margin-left: 60px; width: 1000px; }
+.cards { width: 1000px; display:flex; gap: 30px; justify-content:space-between; margin-top: 10px; }
+.card { width: 320px; text-align:center; background: transparent; }
+.card img { width: 100%; height: 320px; object-fit: cover; border: 6px solid rgba(0,0,0,0.08); }
+.card figcaption { margin-top: 18px; font-family: "Marcellus"; font-size: 28px; color: #0f2340; }
+
+/* ====== SEÇÃO 3: Atividades (full-width image bg) ====== */
+.atividades { position: relative; width: 100vw; height: 480px; overflow: hidden; display:flex; align-items:center; justify-content:center; }
+.atividades .bg-image { position:absolute; inset:0; z-index:0; display:block; }
+.atividades .bg-image img { width:100%; height:100%; object-fit:cover; filter: brightness(0.45); transform: none; }
+.center-content { position:relative; z-index:2; text-align:center; color: #F6EFD8; }
+.atividades-title { font-size: 64px; margin-bottom: 30px; }
+.btn-primary {
+  background: #F6EFD8; color: #16303a; border-radius: 40px; padding: 20px 60px; border: none;
+  font-family: "PT Serif"; font-size: 16px; cursor: pointer;
+}
+.btn-primary.small { padding: 14px 36px; }
+
+/* thin dividing line like in the image (subtle) */
+.atividades::after {
+  content: ""; position:absolute; bottom:0; left:10%; right:10%; height:2px; background: rgba(255,255,255,0.08);
+}
+
+/* ====== SEÇÃO 4: Contato ====== */
+.contato { width: 100vw; min-height: 720px; background: #8EA6AA; display:flex; align-items:flex-start; justify-content:center; padding: 50px 0; }
+.contato-left { width: 440px; padding-left: 60px; }
+.section-big { font-size: 72px; color: #102836; line-height: 0.95; }
+.contato-right { width: 640px; padding-left: 40px; }
+
+/* redes sociais area */
+.redes-title { font-family: "Marcellus"; font-size: 28px; color: #102836; margin-bottom: 30px; }
+.social-icons { display:flex; gap: 80px; align-items:center; margin-bottom: 30px; }
+.social-icons img { width: 120px; opacity: 0.6; }
+
+/* form */
+.contact-form label { display:block; font-size: 14px; color: #102836; margin-bottom:8px; font-weight:700; }
+.two-cols { display:flex; gap:18px; margin-bottom:12px; }
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width:100%; padding:14px 18px; border-radius: 24px; border:2px solid rgba(16,40,54,0.6); background: rgba(255,255,255,0.06);
+  font-family:"PT Serif"; font-size:14px; color:#102836; outline:none;
+}
+.contact-form textarea { border-radius: 20px; padding:18px; height:140px; resize:none; }
+.btn-ghost.small { margin-top:18px; }
+
+/* ====== FOOTER ====== */
+.footer { width:100vw; background: #173842; padding: 48px 0; color: #F6EFD8; }
+.footer-inner { width:1000px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:30px; }
+.footer-left { width: 320px; }
+.footer-title { font-size:44px; color:#F6EFD8; }
+.footer-center { width: 220px; text-align:center; }
+.footer-illu { width: 160px; margin-bottom: 12px; }
+.footer-links { display:flex; flex-direction:column; gap:8px; }
+.footer-links a { color:#F6EFD8; text-decoration:underline; font-family:"PT Serif"; }
+
+/* newsletter right */
+.footer-right { width: 360px; }
+.newsletter-text { font-size:14px; color:#F6EFD8; margin-bottom:12px; }
+.newsletter { margin-top:12px; display:flex; gap:18px; align-items:center; }
+.newsletter input { flex:1; padding: 16px; border-radius:4px; border:none; font-size:14px; }
 
