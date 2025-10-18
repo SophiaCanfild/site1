@@ -6,7 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("DOMContentLoaded", function () {
   const card = document.getElementById("card1");
 
-  card.addEventListener("click", function () {
-    card.classList.toggle("flipped");
+  document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    card.addEventListener("click", function () {
+      const inner = card.querySelector(".card-inner");
+      inner.classList.toggle("flipped");
+    });
   });
 });
