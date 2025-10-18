@@ -59,12 +59,14 @@ body {
   text-align: center;
 }
 
-.section-title {
+..section-title {
   font-family: "Marcellus", serif;
   font-size: 62px;
-  color: var(--dark-blue);
+  color: white; /* cor branca */
   margin-bottom: 34px;
+  text-align: left; /* alinha à esquerda */
 }
+
 
 /* Cards alinhados */
 .cards {
