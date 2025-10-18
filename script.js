@@ -13,5 +13,4 @@ document.addEventListener("DOMContentLoaded", function () {
       const inner = card.querySelector(".card-inner");
       inner.classList.toggle("flipped");
     });
-  });
-});
+
