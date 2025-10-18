@@ -37,6 +37,7 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
 /* --- Espaçamento entre seções (sutil, uniforme) --- */
 section{padding-top:40px;padding-bottom:60px}
 
+
 /* --- DESTAQUES (Seção 2) --- */
 .destaques {
   background: #92A9AE;
