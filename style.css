@@ -38,25 +38,35 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
 section{padding-top:40px;padding-bottom:60px}
 
 
-/* --- DESTAQUES (Seção 2) --- */
+:root {
+  --dark-blue: #003366;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #92A9AE;
+}
+
 .destaques {
-  background: #92A9AE;
   display: flex;
   justify-content: center;
   padding: 40px 0;
 }
+
 .destaques-inner {
   width: 1100px;
-}
-.section-title {
-  font-family: "Marcellus", serif;
-  font-size: 62px;
-  color: var(--dark);
-  margin-bottom: 34px;
   text-align: center;
 }
 
-/* Cards: alinhados e com efeito de clique */
+.section-title {
+  font-family: "Marcellus", serif;
+  font-size: 62px;
+  color: var(--dark-blue); /* azul escuro */
+  margin-bottom: 34px;
+}
+
+/* Cards alinhados */
 .cards {
   display: flex;
   gap: 34px;
@@ -100,24 +110,23 @@ section{padding-top:40px;padding-bottom:60px}
   box-sizing: border-box;
 }
 
-/* Frente do cartão */
 .card-front img {
   width: 100%;
   height: 70%;
   object-fit: cover;
   display: block;
 }
+
 .card-front figcaption {
   padding: 10px;
   font-family: "Marcellus", serif;
   font-size: 28px;
-  color: var(--dark);
+  color: var(--dark-blue);
   text-align: center;
   width: 100%;
   background-color: #f0f0f0;
 }
 
-/* Verso do cartão */
 .card-back {
   background-color: #f0f0f0;
   transform: rotateY(180deg);
@@ -127,6 +136,7 @@ section{padding-top:40px;padding-bottom:60px}
   color: #333;
   text-align: center;
 }
+
 
 
 
