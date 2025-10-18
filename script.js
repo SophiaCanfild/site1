@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   cards.forEach(card => {
     card.addEventListener("click", function () {
-      card.classList.toggle("flipped");
+      const inner = card.querySelector(".card-inner");
+      inner.classList.toggle("flipped");
     });
   });
 });
-
-

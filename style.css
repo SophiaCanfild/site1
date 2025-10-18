@@ -79,7 +79,6 @@ body {
   height: 400px;
   perspective: 1000px;
   cursor: pointer;
-  flex-shrink: 0;
 }
 
 .card-inner {
@@ -90,7 +89,7 @@ body {
   transform-style: preserve-3d;
 }
 
-.card.flipped .card-inner {
+.card-inner.flipped {
   transform: rotateY(180deg);
 }
 
@@ -136,6 +135,7 @@ body {
   color: #333;
   text-align: center;
 }
+
 
 /* --- ATIVIDADES (Seção 3) --- */
 .atividades{position:relative;display:flex;align-items:center;justify-content:center;height:520px;overflow:visible;background:transparent}
