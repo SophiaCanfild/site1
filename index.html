@@ -40,57 +40,42 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Destaques</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Virar Imagem</title>
+  <style>
+    #card {
+      width: 300px;
+      height: 400px;
+      margin: 50px auto;
+      perspective: 1000px;
+    }
+
+    #imagem {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+  </style>
 </head>
 <body>
-  <section class="destaques">
-    <div class="destaques-inner">
-      <h2 class="section-title">Destaques</h2>
 
-      <div class="cards">
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="imagem2.1.jpeg" alt="Professores">
-              <figcaption>Professores</figcaption>
-            </div>
-            <div class="card-back">
-              <p>Informações sobre os professores: formação, experiência e disciplinas que lecionam.</p>
-            </div>
-          </div>
-        </div>
+  <div id="card">
+    <img id="imagem" src="imagem2.1.jpeg" alt="Professores">
+  </div>
 
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="imagem2.2.jpeg" alt="Projetos">
-              <figcaption>Projetos</figcaption>
-            </div>
-            <div class="card-back">
-              <p>Projetos desenvolvidos pelos alunos, incluindo feiras, robótica e sustentabilidade.</p>
-            </div>
-          </div>
-        </div>
+  <script>
+    const imagem = document.getElementById("imagem");
+    let girada = false;
 
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="imagem2.3.png" alt="Escola">
-              <figcaption>Escola</figcaption>
-            </div>
-            <div class="card-back">
-              <p>Informações sobre a estrutura da escola, salas, laboratórios e áreas comuns.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    imagem.addEventListener("click", function () {
+      girada = !girada;
+      imagem.style.transform = girada ? "rotateY(180deg)" : "rotateY(0deg)";
+    });
+  </script>
 
-  <script src="script.js"></script>
 </body>
 </html>
+
 
 
   <!-- ===== SEÇÃO 3: Atividades — full-width hero com imagem aparecendo inteira ===== -->
