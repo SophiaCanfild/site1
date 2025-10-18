@@ -62,7 +62,7 @@ body {
 .section-title {
   font-family: "Marcellus", serif;
   font-size: 62px;
-  color: var(--dark-blue); /* azul escuro */
+  color: var(--dark-blue);
   margin-bottom: 34px;
 }
 
@@ -136,6 +136,7 @@ body {
   color: #333;
   text-align: center;
 }
+
 
 
 
