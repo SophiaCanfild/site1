@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnCadastre = document.getElementById("btn-cadastre");
 
 
-
  document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
 
