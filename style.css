@@ -139,7 +139,6 @@ body {
 
 
 
-
 /* --- ATIVIDADES (Seção 3) --- */
 .atividades{position:relative;display:flex;align-items:center;justify-content:center;height:520px;overflow:visible;background:transparent}
 .atividades-inner{position:relative;z-index:2;text-align:center}
