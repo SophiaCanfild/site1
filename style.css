@@ -62,11 +62,6 @@ body {
   width: 300px;
   height: 400px;
   perspective: 1000px;
-  position: relative;
-}
-
-.card-toggle {
-  display: none;
 }
 
 .card-inner {
@@ -77,7 +72,7 @@ body {
   transform-style: preserve-3d;
 }
 
-.card-toggle:checked + .card-inner {
+.card.flipped .card-inner {
   transform: rotateY(180deg);
 }
 
@@ -94,7 +89,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .card-front {
@@ -102,10 +96,11 @@ body {
   z-index: 2;
 }
 
-.card-front img {
+.card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .card-label {
@@ -126,7 +121,6 @@ body {
   text-align: center;
   z-index: 1;
 }
-
 
 
 /* --- ATIVIDADES (Seção 3) --- */
