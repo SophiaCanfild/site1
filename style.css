@@ -40,20 +40,19 @@ section{padding-top:40px;padding-bottom:60px}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .destaques-area {
-  background-color: #b0c4d6; /* cinza azulado claro */
-  padding: 40px 20px;
+  background-color: #dce6f0; /* cinza azul mais claro */
+  padding: 40px 40px;
 }
 
-.destaques-area h2 {
-  color: white;
+.titulo-destaques {
+  color: #ffffff;
   margin-bottom: 30px;
-  font-size: 2em;
+  font-size: 2.2em;
   text-align: left;
-  margin-left: 10px;
 }
 
 .cards-container {
@@ -61,12 +60,6 @@ body {
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-}
-
-.card-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .card {
@@ -80,8 +73,8 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
   transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
 
 .card.flipped .card-inner {
@@ -93,9 +86,13 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
   border-radius: 10px;
   overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  position: relative;
 }
 
 .card-front img {
@@ -103,6 +100,18 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  font-size: 1.1em;
+  padding: 8px 0;
+  font-weight: bold;
 }
 
 .card-back {
@@ -117,12 +126,6 @@ body {
   text-align: center;
 }
 
-.card-label {
-  margin-top: 10px;
-  font-weight: bold;
-  color: white;
-  font-size: 1.1em;
-}
 
 
 
