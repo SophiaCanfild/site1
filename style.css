@@ -91,12 +91,12 @@ body {
   align-items: center;
 }
 
-.front {
+.card-front {
   background-color: #fff;
   z-index: 2;
 }
 
-.back {
+.card-back {
   background-color: #003366;
   color: white;
   transform: rotateY(180deg);
