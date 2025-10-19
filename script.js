@@ -6,16 +6,17 @@
     image.addEventListener("click", function () {
       const card = image.closest(".card");
 
-      // Adiciona a classe para girar
+      // Gira o cartão
       card.classList.add("flipped");
 
-      // Remove a classe após 3 segundos
+      // Volta após 10 segundos (10000 milissegundos)
       setTimeout(() => {
         card.classList.remove("flipped");
-      }, 3000);
+      }, 10000);
     });
   });
 });
+
 
 document.addEventListener("DOMContentLoaded", function () 
   const btnSaiba = document.getElementById("btn-saiba");
