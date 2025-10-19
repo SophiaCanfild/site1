@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <!-- ===== SEÇÃO 1: HERO ===== -->
+  <!-- ===== SEÇÃO 1: HERO com texto à esquerda e imagem à direita ===== -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-left">
@@ -26,8 +26,7 @@
         <p class="hero-desc">
           Descubra o futuro da educação com o nosso curso técnico, projetado para atender às suas necessidades de aprendizado. Com uma variedade de disciplinas e especialistas na área, oferecemos uma oportunidade única de desenvolvimento profissional e pessoal.
         </p>
-        <a class="btn" href="sobre.html">Saiba mais</a>
-      </div>
+       <a class="btn" href="sobre.html">Saiba mais</a>
 
       <div class="hero-right">
         <img src="imagem1.jpeg" alt="Sala e decoração">
@@ -35,51 +34,50 @@
     </div>
   </section>
 
-  <!-- ===== SEÇÃO 2: DESTAQUES ===== -->
-  <h2 class="section-title">Destaques</h2>
+<h2 class="section-title">Destaques</h2>
 
-  <div class="cards">
-    <!-- Cartão 1: Professores -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="https://via.placeholder.com/300x400?text=Professores" alt="Professores" class="card-image">
-          <div class="card-label">Professores</div>
-        </div>
-        <div class="card-back">
-          <p>Informações sobre os professores: formação, experiência e disciplinas que lecionam.</p>
-        </div>
+<div class="cards">
+  <!-- Cartão 1: Professores -->
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://via.placeholder.com/300x400?text=Professores" alt="Professores" class="card-image">
+        <div class="card-label">Professores</div>
       </div>
-    </div>
-
-    <!-- Cartão 2: Projetos -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="https://via.placeholder.com/300x400?text=Projetos" alt="Projetos" class="card-image">
-          <div class="card-label">Projetos</div>
-        </div>
-        <div class="card-back">
-          <p>Projetos desenvolvidos pelos alunos, incluindo feiras, robótica e sustentabilidade.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cartão 3: Escola -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="https://via.placeholder.com/300x400?text=Escola" alt="Escola" class="card-image">
-          <div class="card-label">Escola</div>
-        </div>
-        <div class="card-back">
-          <p>Informações sobre a estrutura da escola, salas, laboratórios e áreas comuns.</p>
-        </div>
+      <div class="card-back">
+        <p>Informações sobre os professores: formação, experiência e disciplinas que lecionam.</p>
       </div>
     </div>
   </div>
 
-  <!-- ===== SEÇÃO 3: ATIVIDADES ===== -->
+  <!-- Cartão 2: Projetos -->
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://via.placeholder.com/300x400?text=Projetos" alt="Projetos" class="card-image">
+        <div class="card-label">Projetos</div>
+      </div>
+      <div class="card-back">
+        <p>Projetos desenvolvidos pelos alunos, incluindo feiras, robótica e sustentabilidade.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cartão 3: Escola -->
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://via.placeholder.com/300x400?text=Escola" alt="Escola" class="card-image">
+        <div class="card-label">Escola</div>
+      </div>
+      <div class="card-back">
+        <p>Informações sobre a estrutura da escola, salas, laboratórios e áreas comuns.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ===== SEÇÃO 3: Atividades — full-width hero com imagem aparecendo inteira ===== -->
   <section class="atividades">
     <div class="atividades-inner">
       <h2 class="atividades-title">Um pouco sobre nossas atividades</h2>
@@ -88,10 +86,21 @@
     <div class="atividades-bg" aria-hidden="true"></div>
   </section>
 
-  <!-- ===== SEÇÃO 4: CONTATO E REDES ===== -->
+  <!-- ===== SEÇÃO 4: Contato & redes sociais (layout corrigido) ===== -->
   <section class="contato">
     <div class="contato-inner">
       <div class="contato-left">
+        <!-- Siga-nos nas redes sociais (agora à esquerda) -->
+        <h3 class="redes-title">Siga-nos nas redes sociais</h3>
+        <div class="social-icons">
+          <img src="insta.png" alt="Instagram">
+          <img src="face.png" alt="Facebook">
+          <img src="whats.png" alt="WhatsApp">
+        </div>
+      </div>
+
+      <div class="contato-right">
+        <!-- Converse conosco (agora à direita, acima do formulário) -->
         <h2 class="section-big">Converse<br />conosco</h2>
 
         <form class="contact-form" onsubmit="return false;">
@@ -110,19 +119,10 @@
           <button class="btn-ghost small" id="btn-enviar">Enviar</button>
         </form>
       </div>
-
-      <div class="contato-right">
-        <h3 class="redes-title">Siga-nos nas redes sociais</h3>
-        <div class="social-icons">
-          <img src="insta.png" alt="Instagram">
-          <img src="face.png" alt="Facebook">
-          <img src="whats.png" alt="WhatsApp">
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- ===== SEÇÃO 5: RODAPÉ ===== -->
+  <!-- ===== SEÇÃO 5: Footer com newsletter ===== -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-left">
