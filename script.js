@@ -6,14 +6,3 @@ document.addEventListener("DOMContentLoaded", function ()
   document.addEventListener("DOMContentLoaded", function () 
   const card = document.getElementById("card1");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const labels = document.querySelectorAll(".card-label");
-
-  labels.forEach(label => {
-    label.addEventListener("click", function (event) {
-      const card = label.closest(".card");
-      card.classList.toggle("flipped");
-      event.stopPropagation(); // evita conflito com outros cliques
-    });
-  });
-});
