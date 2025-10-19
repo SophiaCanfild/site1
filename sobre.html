@@ -124,12 +124,19 @@
     </div>
   </div>
 
-  <a href="index.html" class="back-btn">Voltar</a>
+  <!-- Botão alterado para usar JavaScript -->
+  <button id="backBtn" class="back-btn">Voltar</button>
 
   <script>
     // Faz o efeito fade-in quando a página é carregada
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
+    });
+
+    // Faz o botão voltar para a página inicial usando JavaScript
+    const backBtn = document.getElementById('backBtn');
+    backBtn.addEventListener('click', () => {
+      window.location.href = 'index.html';
     });
   </script>
 </body>
