@@ -102,11 +102,13 @@ body {
   object-fit: cover;
 }
 
-.card-title {
-  padding: 10px;
-  font-size: 24px;
-  background-color: #f0f0f0;
+.card-label {
+  position: absolute;
+  bottom: 0;
   width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-size: 24px;
   text-align: center;
   color: #003366;
   cursor: pointer;

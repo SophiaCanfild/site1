@@ -7,12 +7,13 @@ document.addEventListener("DOMContentLoaded", function ()
   const card = document.getElementById("card1");
 
 document.addEventListener("DOMContentLoaded", function () {
-  const titles = document.querySelectorAll(".card-title");
+  const labels = document.querySelectorAll(".card-label");
 
-  titles.forEach(title => {
-    title.addEventListener("click", function () {
-      const card = title.closest(".card");
+  labels.forEach(label => {
+    label.addEventListener("click", function (event) {
+      const card = label.closest(".card");
       card.classList.toggle("flipped");
+      event.stopPropagation(); // evita conflito com outros cliques
     });
   });
 });
