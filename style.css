@@ -54,7 +54,6 @@ body {
 .cards {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 30px;
   flex-wrap: wrap;
 }
@@ -63,8 +62,11 @@ body {
   width: 300px;
   height: 400px;
   perspective: 1000px;
-  cursor: pointer;
-  display: block;
+  position: relative;
+}
+
+.card-toggle {
+  display: none;
 }
 
 .card-inner {
@@ -92,10 +94,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .card-front {
   background-color: #fff;
+  z-index: 2;
 }
 
 .card-front img {
@@ -120,7 +124,9 @@ body {
   transform: rotateY(180deg);
   padding: 20px;
   text-align: center;
+  z-index: 1;
 }
+
 
 
 /* --- ATIVIDADES (Seção 3) --- */
