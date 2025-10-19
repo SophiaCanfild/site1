@@ -40,47 +40,18 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Destaques</title>
+  <title>Cartão Giratório</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h2 class="section-title">Destaques</h2>
-
-  <div class="cards">
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="imagem2.1.jpeg" alt="Professores" class="card-image">
-          <div class="card-label">Professores</div>
-        </div>
-        <div class="card-back">
-          <p>Informações sobre os professores: formação, experiência e disciplinas que lecionam.</p>
-        </div>
+  <div class="card" id="card1">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="imagem2.1.jpeg" alt="Professores" class="card-image">
       </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="imagem2.2.jpeg" alt="Projetos" class="card-image">
-          <div class="card-label">Projetos</div>
-        </div>
-        <div class="card-back">
-          <p>Projetos desenvolvidos pelos alunos, incluindo feiras, robótica e sustentabilidade.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="imagem2.3.png" alt="Escola" class="card-image">
-          <div class="card-label">Escola</div>
-        </div>
-        <div class="card-back">
-          <p>Informações sobre a estrutura da escola, salas, laboratórios e áreas comuns.</p>
-        </div>
+      <div class="card-back">
+        <p>Informações sobre os professores.</p>
       </div>
     </div>
   </div>
@@ -88,6 +59,73 @@
   <script src="script.js"></script>
 </body>
 </html>
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  background-color: #fff;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.card-back {
+  background-color: #003366;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+}
+document.addEventListener("DOMContentLoaded", function () {
+  const image = document.querySelector(".card-image");
+  const card = document.getElementById("card1");
+
+  image.addEventListener("click", function () {
+    card.classList.toggle("flipped");
+  });
+});
+
 
 
 
