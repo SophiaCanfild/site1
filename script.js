@@ -5,10 +5,14 @@ document.addEventListener("DOMContentLoaded", function ()
   const btnCadastre = document.getElementById("btn-cadastre");
  
   document.addEventListener("DOMContentLoaded", function () {
-  const image = document.querySelector(".card-image");
-  const card = document.getElementById("card1");
+  const images = document.querySelectorAll(".card-image");
 
-  image.addEventListener("click", function () {
-    card.classList.toggle("flipped");
+  images.forEach(image => {
+    image.addEventListener("click", function () {
+      const card = image.closest(".card");
+      if (card) {
+        card.classList.toggle("flipped");
+      }
+    });
   });
 });

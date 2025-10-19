@@ -38,11 +38,23 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
 section{padding-top:40px;padding-bottom:60px}
 
 body {
-  background-color: #f0f0f0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #92A9AE;
+}
+
+.section-title {
+  font-size: 62px;
+  color: white;
+  margin: 40px;
+  text-align: left;
+}
+
+.cards {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -73,27 +85,40 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .card-front {
   background-color: #fff;
+  z-index: 2;
 }
 
-.card-front img {
+.card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
 }
 
+.card-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-size: 24px;
+  text-align: center;
+  color: #003366;
+}
+
 .card-back {
-  background-color: #003366;
-  color: white;
+  background-color: #f0f0f0;
   transform: rotateY(180deg);
   padding: 20px;
   text-align: center;
+  z-index: 1;
 }
 
 
