@@ -44,7 +44,7 @@ body {
 }
 
 .destaques-area {
-  background-color: #dce6f0; /* cinza azul mais claro */
+  background-color: #a9c1d9; /* cinza azulado um pouco mais escuro */
   padding: 40px 40px;
 }
 
@@ -77,7 +77,7 @@ body {
   transition: transform 0.6s;
 }
 
-.card.flipped .card-inner {
+.card-inner.flipped {
   transform: rotateY(180deg);
 }
 
@@ -125,6 +125,7 @@ body {
   box-sizing: border-box;
   text-align: center;
 }
+
 
 
 

@@ -1,5 +1,6 @@
 function flipCard(cardElement) {
-  cardElement.classList.toggle('flipped');
+  const inner = cardElement.querySelector('.card-inner');
+  inner.classList.toggle('flipped');
 }
 
 
