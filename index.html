@@ -59,12 +59,14 @@
       margin-bottom: 30px;
     }
 
-    .cards-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
+    .card {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative; /* ESSENCIAL para manter o flip no lugar */
+}
+
 
     .card {
       width: 200px;
