@@ -26,7 +26,14 @@
         <p class="hero-desc">
           Descubra o futuro da educação com o nosso curso técnico, projetado para atender às suas necessidades de aprendizado. Com uma variedade de disciplinas e especialistas na área, oferecemos uma oportunidade única de desenvolvimento profissional e pessoal.
         </p>
-       <a class="btn" href="sobre.html">Saiba mais</a>
+       <button id="saibaMaisBtn" class="btn">Saiba mais</button>
+
+<script>
+const saibaMaisBtn = document.getElementById('saibaMaisBtn');
+saibaMaisBtn.addEventListener('click', () => {
+  window.location.href = 'sobre.html';
+});
+</script>
 
       <div class="hero-right">
         <img src="imagem1.jpeg" alt="Sala e decoração">
