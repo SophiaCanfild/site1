@@ -7,10 +7,11 @@ document.addEventListener("DOMContentLoaded", function ()
   const card = document.getElementById("card1");
 
 document.addEventListener("DOMContentLoaded", function () {
-  const cards = document.querySelectorAll(".card");
+  const titles = document.querySelectorAll(".card-title");
 
-  cards.forEach(card => {
-    card.addEventListener("click", function () {
+  titles.forEach(title => {
+    title.addEventListener("click", function () {
+      const card = title.closest(".card");
       card.classList.toggle("flipped");
     });
   });

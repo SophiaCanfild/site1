@@ -63,7 +63,6 @@ body {
   width: 300px;
   height: 400px;
   perspective: 1000px;
-  cursor: pointer;
 }
 
 .card-inner {
@@ -103,13 +102,14 @@ body {
   object-fit: cover;
 }
 
-.card-front figcaption {
+.card-title {
   padding: 10px;
   font-size: 24px;
   background-color: #f0f0f0;
   width: 100%;
   text-align: center;
   color: #003366;
+  cursor: pointer;
 }
 
 .card-back {
@@ -118,9 +118,6 @@ body {
   padding: 20px;
   text-align: center;
 }
-
-
-
 
 /* --- ATIVIDADES (Seção 3) --- */
 .atividades{position:relative;display:flex;align-items:center;justify-content:center;height:520px;overflow:visible;background:transparent}
