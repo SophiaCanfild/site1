@@ -1,14 +1,15 @@
 
-  document.addEventListener("DOMContentLoaded", function () {
+ document.addEventListener("DOMContentLoaded", function () {
   const images = document.querySelectorAll(".card-image");
 
   images.forEach(image => {
     image.addEventListener("click", function () {
-      const card = image.closest("card");
+      const card = image.closest(".card");
       card.classList.toggle("flipped");
     });
   });
 });
+
 document.addEventListener("DOMContentLoaded", function () 
   const btnSaiba = document.getElementById("btn-saiba");
   const btnClique = document.getElementById("btn-clique");
