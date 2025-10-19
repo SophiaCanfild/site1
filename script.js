@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", function ()
   images.forEach(image => {
     image.addEventListener("click", function () {
       const card = image.closest(".card");
-      card.classList.toggle("flipped");
+      if (card) {
+        card.classList.toggle("flipped");
+      }
     });
   });
 });
+
