@@ -4,6 +4,7 @@ function flipCard(cardElement) {
 
 
 
+
 document.addEventListener("DOMContentLoaded", function () 
   const btnSaiba = document.getElementById("btn-saiba");
   const btnClique = document.getElementById("btn-clique");
