@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function ()
         """;
 
 document.addEventListener("DOMContentLoaded", function () {
-  const icones = document.querySelectorAll(".social-icons img");
+  const icones = document.querySelectorAll("social-icons");
 
   icones.forEach(img => {
     img.addEventListener("click", function () {
