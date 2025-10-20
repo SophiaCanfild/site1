@@ -105,3 +105,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+// ====== FORMULÁRIO DE CADASTRO DE E-MAIL ======
+const formEmail = document.getElementById("form-email");
+const mensagemSucesso = document.getElementById("mensagem-sucesso");
+
+formEmail.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+
+  if (email === "") {
+    mensagemSucesso.style.display = "block";
+    mensagemSucesso.style.color = "#ffaaaa";
+    mensagemSucesso.textContent = "Por favor, insira um e-mail válido.";
+    return;
+  }
+
+  mensagemSucesso.style.display = "block";
+  mensagemSucesso.style.color = "#a9e4a9";
+  mensagemSucesso.textContent = "E-mail cadastrado com sucesso! ✅";
+
+  // Limpa o campo após envio
+  formEmail.reset();
+
+  // Esconde a mensagem após 4 segundos
+  setTimeout(() => {
+    mensagemSucesso.style.display = "none";
+  }, 4000);
+});
