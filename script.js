@@ -1,22 +1,30 @@
-  const inner = cardElement.querySelector('.card-in  inner.classList.toggle('fl}
+// =====================================
+// CORREÇÃO COMPLETA DO SEU CÓDIGO JS
+// =====================================
 
+// Corrigido: código de "flip" (aparentemente um card animado)
+const cardElement = document.querySelector('.card-in');
+if (cardElement) {
+  cardElement.addEventListener('click', () => {
+    const inner = cardElement.querySelector('.inner');
+    if (inner) inner.classList.toggle('fl');
+  });
+}
 
-
-document.addEventListener("DOMContentLoaded", function () 
+document.addEventListener("DOMContentLoaded", function () {
   const btnSaiba = document.getElementById("btn-saiba");
   const btnClique = document.getElementById("btn-clique");
   const btnEnviar = document.getElementById("btn-enviar");
   const btnCadastre = document.getElementById("btn-cadastre");
+  // (mantido sem alterações, caso use em outro trecho)
+});
 
-  
-              </div>
-            </div>
-          </div>
-        </section>
-        """;
-
+// ===============================
+// REDES SOCIAIS (ICONS CLICK)
+// ===============================
 document.addEventListener("DOMContentLoaded", function () {
-  const icones = document.querySelectorAll("social-icons");
+  // Corrigido seletor: precisa de "." antes de 'social-icons'
+  const icones = document.querySelectorAll(".social-icons img");
 
   icones.forEach(img => {
     img.addEventListener("click", function () {
@@ -37,6 +45,29 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         console.warn("Não foi possível identificar o link do ícone:", img);
       }
+    });
+  });
+});
+
+// ===============================
+// ANIMAÇÃO DE CLIQUE NOS BOTÕES
+// ===============================
+document.addEventListener("DOMContentLoaded", function () {
+  // Seleciona todos os botões mencionados (se existirem)
+  const botoes = [
+    document.getElementById("btn-saiba"),
+    document.getElementById("btn-clique"),
+    document.getElementById("btn-enviar"),
+    document.getElementById("btn-cadastre")
+  ].filter(Boolean); // remove os nulos
+
+  // Cria uma animação CSS temporária
+  botoes.forEach(botao => {
+    botao.addEventListener("click", () => {
+      botao.classList.add("animar-botao");
+      setTimeout(() => {
+        botao.classList.remove("animar-botao");
+      }, 400); // duração da animação
     });
   });
 });

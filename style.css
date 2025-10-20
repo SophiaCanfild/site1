@@ -98,3 +98,11 @@ section{padding-top:40px;padding-bottom:60px}
   .hero-right img{width:420px}
   .cards{gap:20px}
 }
+/* ==========================
+   ANIMAÇÃO DE CLIQUE NOS BOTÕES
+========================== */
+.animar-botao {
+  transform: scale(0.9);
+  transition: transform 0.1s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
