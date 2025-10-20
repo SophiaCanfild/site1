@@ -281,28 +281,28 @@
   <script src="script.js"></script>
 </body>
 </html>
-<!-- SEÇÃO DE LOGIN E CADASTRO -->
-<section class="area-login-cadastro">
-  <h2>Área do Usuário</h2>
+<!-- Seção de Login e Cadastro -->
+<section class="login-cadastro">
+  <div class="container-formularios">
+    <!-- Login -->
+    <div class="box-form login">
+      <h3>Área do Usuário</h3>
+      <form id="form-login">
+        <input type="text" id="usuario" placeholder="Usuário" required />
+        <input type="password" id="senha" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+        <p id="mensagem-login" class="mensagem"></p>
+      </form>
+    </div>
 
-  <!-- Formulário de Login -->
-  <form id="form-login">
-    <h3>Entrar</h3>
-    <input type="text" id="usuario" placeholder="Usuário" required />
-    <input type="password" id="senha" placeholder="Senha" required />
-    <button type="submit">Login</button>
-    <p id="mensagem-login" class="mensagem"></p>
-  </form>
-
-  <hr />
-
-  <!-- Cadastro de E-mail -->
-  <section class="cadastro-email">
-    <h3>Cadastre seu endereço de e-mail para receber novidades e atualizações.</h3>
-    <form id="form-email" novalidate>
-      <input type="email" id="email" placeholder="Endereço de e-mail" required />
-      <button type="submit">Cadastre-se</button>
-    </form>
-    <p id="mensagem-sucesso" class="mensagem"></p>
-  </section>
+    <!-- Cadastro de E-mail -->
+    <div class="box-form cadastro-email">
+      <h3>Cadastre seu endereço de e-mail para receber novidades e atualizações.</h3>
+      <form id="form-email">
+        <input type="email" id="email" placeholder="Endereço de e-mail" required />
+        <button type="submit">Cadastre-se</button>
+      </form>
+      <p id="mensagem-sucesso" class="mensagem"></p>
+    </div>
+  </div>
 </section>

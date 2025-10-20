@@ -105,11 +105,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-// ===== FORMULÁRIO DE LOGIN =====
+// ====== LOGIN ======
 const formLogin = document.getElementById("form-login");
 const msgLogin = document.getElementById("mensagem-login");
 
-// Simulação simples de usuário
+// Exemplo de login válido
 const usuarioValido = "admin";
 const senhaValida = "1234";
 
@@ -127,24 +127,24 @@ formLogin.addEventListener("submit", (e) => {
   formLogin.reset();
 });
 
-// ===== FORMULÁRIO DE CADASTRO DE E-MAIL =====
+// ====== CADASTRO DE E-MAIL ======
 const formEmail = document.getElementById("form-email");
-const mensagemSucesso = document.getElementById("mensagem-sucesso");
+const msgEmail = document.getElementById("mensagem-sucesso");
 
 formEmail.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = document.getElementById("email").value.trim();
 
   if (email === "" || !email.includes("@")) {
-    mostrarMensagem(mensagemSucesso, "Por favor, insira um e-mail válido.", "#ffaaaa");
+    mostrarMensagem(msgEmail, "Por favor, insira um e-mail válido.", "#ffaaaa");
     return;
   }
 
-  mostrarMensagem(mensagemSucesso, "E-mail cadastrado com sucesso! ✅", "#a9e4a9");
+  mostrarMensagem(msgEmail, "E-mail cadastrado com sucesso! ✅", "#a9e4a9");
   formEmail.reset();
 });
 
-// ===== FUNÇÃO GENÉRICA DE EXIBIÇÃO =====
+// ====== Função genérica ======
 function mostrarMensagem(elemento, texto, cor) {
   elemento.textContent = texto;
   elemento.style.color = cor;
