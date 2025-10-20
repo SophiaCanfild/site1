@@ -42,9 +42,16 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Imagem direita - manter proporção e não cortar */
-.hero-right{width:540px;height:700px;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:#ccc}
-.hero-right img{width:540px;height:auto;display:block}
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section img {
+  width: 50%;
+  height: auto;
+}
 
 /* --- Espaçamento entre seções (sutil, uniforme) --- */
 section{padding-top:40px;padding-bottom:60px}
