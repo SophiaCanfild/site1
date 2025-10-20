@@ -25,9 +25,21 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
 /* Move content um pouco mais para a esquerda (mais espaço entre texto e imagem) */
 .hero-inner{padding-left:48px}
 
-/* Botão */
-.btn-ghost{
-  background:var(--cream);color:var(--dark);border:none;padding:16px 54px;border-radius:40px;font-family:"PT Serif";font-size:16px;cursor:pointer
+button {
+  background-color: #f4e3b2;
+  color: #333;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #e6d79f;
+  transform: scale(1.05);
 }
 
 /* Imagem direita - manter proporção e não cortar */
