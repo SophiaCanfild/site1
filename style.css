@@ -161,43 +161,47 @@ input[type="submit"] {
     opacity: 1;
     transform: translateY(0);
   }
-}
-/* ===========================
-   SEÇÃO DE CADASTRO DE E-MAIL
+}/* ===========================
+   ÁREA DE LOGIN E CADASTRO
 =========================== */
-.cadastro-email {
-  text-align: center;
-  padding: 50px 20px;
+.area-login-cadastro {
   background-color: #1f3b40;
   color: #fff;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.cadastro-email h3 {
-  font-size: 1rem;
-  margin-bottom: 15px;
-  font-weight: 400;
-  line-height: 1.4;
+.area-login-cadastro h2 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
 }
 
-.cadastro-email form {
+/* FORMULÁRIOS */
+.area-login-cadastro form {
+  background-color: #243f46;
+  border-radius: 12px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  width: 300px;
+  margin: 0 auto 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.cadastro-email input[type="email"] {
-  width: 260px;
+.area-login-cadastro input {
+  width: 80%;
   padding: 10px;
   border: none;
   border-radius: 6px;
-  font-size: 0.95rem;
   text-align: center;
+  font-size: 1rem;
   outline: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.cadastro-email button {
+.area-login-cadastro button {
   background-color: #e4d6a7;
   color: #222;
   border: none;
@@ -207,44 +211,41 @@ input[type="submit"] {
   font-weight: bold;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.cadastro-email button:hover {
+.area-login-cadastro button:hover {
   background-color: #d9c98e;
   transform: scale(1.05);
 }
 
-/* Mensagem de sucesso / erro */
-.mensagem-sucesso {
-  margin-top: 15px;
-  font-size: 0.95rem;
+/* MENSAGENS */
+.mensagem {
+  font-size: 0.9rem;
   display: none;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.4s ease;
 }
 
-/* Fade-in visível */
-.mensagem-sucesso.visivel {
+.mensagem.visivel {
   display: block;
   opacity: 1;
 }
 
-/* ====== MODO ESCURO ====== */
-body.escuro .cadastro-email {
+/* SEPARADOR */
+.area-login-cadastro hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 30px auto;
+  width: 60%;
+}
+
+/* MODO ESCURO */
+body.escuro .area-login-cadastro {
   background-color: #0f1a20;
 }
 
-body.escuro .cadastro-email button {
-  background-color: #c9b680;
-  color: #111;
-}
-
-/* Acessibilidade - esconder label visualmente */
-.sr-only {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+body.escuro .area-login-cadastro form {
+  background-color: #18252c;
 }

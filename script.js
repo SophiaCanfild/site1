@@ -105,33 +105,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+// ===== FORMULÁRIO DE LOGIN =====
+const formLogin = document.getElementById("form-login");
+const msgLogin = document.getElementById("mensagem-login");
+
+// Simulação simples de usuário
+const usuarioValido = "admin";
+const senhaValida = "1234";
+
+formLogin.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const usuario = document.getElementById("usuario").value.trim();
+  const senha = document.getElementById("senha").value.trim();
+
+  if (usuario === usuarioValido && senha === senhaValida) {
+    mostrarMensagem(msgLogin, "Login realizado com sucesso! ✅", "#a9e4a9");
+  } else {
+    mostrarMensagem(msgLogin, "Usuário ou senha incorretos ❌", "#ffaaaa");
+  }
+
+  formLogin.reset();
+});
+
 // ===== FORMULÁRIO DE CADASTRO DE E-MAIL =====
 const formEmail = document.getElementById("form-email");
 const mensagemSucesso = document.getElementById("mensagem-sucesso");
 
 formEmail.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  const emailInput = document.getElementById("email");
-  const email = emailInput.value.trim();
+  const email = document.getElementById("email").value.trim();
 
   if (email === "" || !email.includes("@")) {
-    mostrarMensagem("Por favor, insira um e-mail válido.", "#ffaaaa");
+    mostrarMensagem(mensagemSucesso, "Por favor, insira um e-mail válido.", "#ffaaaa");
     return;
   }
 
-  mostrarMensagem("E-mail cadastrado com sucesso! ✅", "#a9e4a9");
+  mostrarMensagem(mensagemSucesso, "E-mail cadastrado com sucesso! ✅", "#a9e4a9");
   formEmail.reset();
 });
 
-// ===== FUNÇÃO GENÉRICA PARA MOSTRAR MENSAGEM =====
-function mostrarMensagem(texto, cor) {
-  mensagemSucesso.textContent = texto;
-  mensagemSucesso.style.color = cor;
-  mensagemSucesso.classList.add("visivel");
+// ===== FUNÇÃO GENÉRICA DE EXIBIÇÃO =====
+function mostrarMensagem(elemento, texto, cor) {
+  elemento.textContent = texto;
+  elemento.style.color = cor;
+  elemento.classList.add("visivel");
 
-  clearTimeout(mensagemSucesso.timeout);
-  mensagemSucesso.timeout = setTimeout(() => {
-    mensagemSucesso.classList.remove("visivel");
+  clearTimeout(elemento.timeout);
+  elemento.timeout = setTimeout(() => {
+    elemento.classList.remove("visivel");
   }, 4000);
 }
