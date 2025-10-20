@@ -71,3 +71,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+// ===============================
+// FORMULÁRIO DE CONTATO - MENSAGEM DE SUCESSO
+// ===============================
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  const botaoEnviar = document.getElementById("btn-enviar");
+
+  if (form && botaoEnviar) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Impede o envio real do formulário
+
+      // Cria ou reutiliza a mensagem de sucesso
+      let msgSucesso = document.querySelector(".msg-sucesso");
+      if (!msgSucesso) {
+        msgSucesso = document.createElement("p");
+        msgSucesso.className = "msg-sucesso";
+        form.appendChild(msgSucesso);
+      }
+
+      msgSucesso.textContent = "✅ Mensagem enviada com sucesso!";
+      msgSucesso.classList.add("mostrar");
+
+      // Limpa os campos após 1s
+      setTimeout(() => {
+        form.reset();
+      }, 1000);
+
+      // Esconde a mensagem após 3s
+      setTimeout(() => {
+        msgSucesso.classList.remove("mostrar");
+      }, 3000);
+    });
+  }
+});
