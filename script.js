@@ -105,31 +105,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-// ====== FORMULÁRIO DE CADASTRO DE E-MAIL ======
+// ===== FORMULÁRIO DE CADASTRO DE E-MAIL =====
 const formEmail = document.getElementById("form-email");
 const mensagemSucesso = document.getElementById("mensagem-sucesso");
 
 formEmail.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const email = document.getElementById("email").value.trim();
+  const emailInput = document.getElementById("email");
+  const email = emailInput.value.trim();
 
-  if (email === "") {
-    mensagemSucesso.style.display = "block";
-    mensagemSucesso.style.color = "#ffaaaa";
-    mensagemSucesso.textContent = "Por favor, insira um e-mail válido.";
+  if (email === "" || !email.includes("@")) {
+    mostrarMensagem("Por favor, insira um e-mail válido.", "#ffaaaa");
     return;
   }
 
-  mensagemSucesso.style.display = "block";
-  mensagemSucesso.style.color = "#a9e4a9";
-  mensagemSucesso.textContent = "E-mail cadastrado com sucesso! ✅";
-
-  // Limpa o campo após envio
+  mostrarMensagem("E-mail cadastrado com sucesso! ✅", "#a9e4a9");
   formEmail.reset();
-
-  // Esconde a mensagem após 4 segundos
-  setTimeout(() => {
-    mensagemSucesso.style.display = "none";
-  }, 4000);
 });
+
+// ===== FUNÇÃO GENÉRICA PARA MOSTRAR MENSAGEM =====
+function mostrarMensagem(texto, cor) {
+  mensagemSucesso.textContent = texto;
+  mensagemSucesso.style.color = cor;
+  mensagemSucesso.classList.add("visivel");
+
+  clearTimeout(mensagemSucesso.timeout);
+  mensagemSucesso.timeout = setTimeout(() => {
+    mensagemSucesso.classList.remove("visivel");
+  }, 4000);
+}

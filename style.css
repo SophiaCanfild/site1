@@ -176,6 +176,7 @@ input[type="submit"] {
   font-size: 1rem;
   margin-bottom: 15px;
   font-weight: 400;
+  line-height: 1.4;
 }
 
 .cadastro-email form {
@@ -193,7 +194,7 @@ input[type="submit"] {
   font-size: 0.95rem;
   text-align: center;
   outline: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cadastro-email button {
@@ -205,8 +206,8 @@ input[type="submit"] {
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
-  transition: all 0.3s;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cadastro-email button:hover {
@@ -214,14 +215,22 @@ input[type="submit"] {
   transform: scale(1.05);
 }
 
+/* Mensagem de sucesso / erro */
 .mensagem-sucesso {
   margin-top: 15px;
   font-size: 0.95rem;
-  color: #a9e4a9;
   display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-/* MODO ESCURO - AJUSTES DO CADASTRO */
+/* Fade-in visível */
+.mensagem-sucesso.visivel {
+  display: block;
+  opacity: 1;
+}
+
+/* ====== MODO ESCURO ====== */
 body.escuro .cadastro-email {
   background-color: #0f1a20;
 }
@@ -229,4 +238,13 @@ body.escuro .cadastro-email {
 body.escuro .cadastro-email button {
   background-color: #c9b680;
   color: #111;
+}
+
+/* Acessibilidade - esconder label visualmente */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
