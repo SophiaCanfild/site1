@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const formLogin = document.getElementById("form-login");
 const msgLogin = document.getElementById("mensagem-login");
 
-// Exemplo de login válido
+// Exemplo simples
 const usuarioValido = "admin";
 const senhaValida = "1234";
 
