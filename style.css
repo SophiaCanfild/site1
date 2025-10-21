@@ -99,7 +99,24 @@ section{padding-top:40px;padding-bottom:60px}
 .contact-form textarea{border-radius:20px;padding:18px;height:140px;resize:none}
 .btn-ghost.small{margin-top:18px}
 
+/* --- FOOTER --- */
+.footer{width:100%;background:#173842;padding:48px 0;color:var(--cream)}
+.footer-inner{width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.footer-title{font-family:"Marcellus",serif;font-size:44px}
+.footer-illu{width:160px;margin-bottom:12px}
+.footer-links a{color:var(--cream);text-decoration:underline;font-family:"PT Serif"}
 
+/* newsletter */
+.footer-right{width:360px}
+.newsletter input{flex:1;padding:16px;border-radius:4px;border:none;font-size:14px}
+
+/* pequenas correções visuais para preservar o layout fixo */
+@media (max-width:1100px){ /* apenas para evitar quebra extrema ao visualizar em telas pequenas */
+  .hero-inner{grid-template-columns:1fr 420px}
+  .hero-right{width:420px;height:560px}
+  .hero-right img{width:420px}
+  .cards{gap:20px}
+}
 /* ==========================
    ANIMAÇÃO DE CLIQUE NOS BOTÕES
 ========================== */
@@ -145,172 +162,3 @@ input[type="submit"] {
     transform: translateY(0);
   }
 }/* ===========================
-/* ===========================
-   LOGIN + CADASTRO (VISUAL ATUALIZADO)
-=========================== */
-.login-cadastro-secao {
-  background-color: #15343a; /* mesmo tom da imagem */
-  color: #f9f7e8;
-  padding: 70px 40px;
-}
-
-.conteudo-login-cadastro {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px;
-}
-
-/* ======== LADO ESQUERDO ======== */
-.lado-esquerdo {
-  flex: 1.2;
-  text-align: left;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-}
-
-.titulo-bloco {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 25px;
-}
-
-.titulo-bloco h2 {
-  font-size: 2.8rem;
-  line-height: 1.2;
-  font-weight: 600;
-  color: #efe9cc;
-  text-align: right;
-}
-
-.titulo-bloco h2 span {
-  display: block;
-}
-
-.img-banner {
-  width: 180px;
-  height: auto;
-}
-
-.redes-sociais {
-  font-size: 1rem;
-  margin-top: 10px;
-  text-align: right;
-}
-
-.redes-sociais a {
-  color: #efe9cc;
-  margin-left: 6px;
-  text-decoration: underline;
-  transition: color 0.3s;
-}
-
-.redes-sociais a:hover {
-  color: #e4d6a7;
-}
-
-/* ======== LADO DIREITO ======== */
-.lado-direito {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-  min-width: 300px;
-}
-
-/* Formulários (Login + Cadastro) */
-.box-form {
-  background: transparent;
-  text-align: center;
-  width: 100%;
-  max-width: 320px;
-}
-
-.box-form h3 {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 15px;
-  line-height: 1.4;
-}
-
-.box-form form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-/* Campos */
-.box-form input {
-  width: 240px;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  text-align: center;
-  outline: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Botões arredondados */
-.box-form button {
-  background-color: #e4d6a7;
-  color: #111;
-  border: none;
-  border-radius: 40px;
-  padding: 12px 40px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.box-form button:hover {
-  background-color: #d9c98e;
-  transform: scale(1.05);
-}
-
-/* Mensagens */
-.mensagem {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.mensagem.visivel {
-  display: block;
-  opacity: 1;
-}
-
-/* Responsividade */
-@media (max-width: 900px) {
-  .conteudo-login-cadastro {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .titulo-bloco {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .titulo-bloco h2 {
-    text-align: center;
-  }
-
-  .redes-sociais {
-    text-align: center;
-  }
-}
