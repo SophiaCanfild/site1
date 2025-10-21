@@ -88,16 +88,6 @@ section{padding-top:40px;padding-bottom:60px}
 .social-icons{display:flex;gap:40px;align-items:center}
 .social-icons img{width:120px;opacity:0.6}
 
-/* direita: formulário */
-.contato-right{flex:1}
-.section-big{font-family:"Marcellus",serif;font-size:72px;color:var(--dark);line-height:0.95;margin-bottom:22px}
-.contact-form label{display:block;font-size:14px;color:var(--dark);margin-bottom:8px;font-weight:700}
-.two-cols{display:flex;gap:18px;margin-bottom:12px}
-.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea{
-  width:100%;padding:14px 18px;border-radius:24px;border:2px solid rgba(16,40,54,0.6);background:rgba(255,255,255,0.06);font-family:"PT Serif";font-size:14px;color:var(--dark);outline:none
-}
-.contact-form textarea{border-radius:20px;padding:18px;height:140px;resize:none}
-.btn-ghost.small{margin-top:18px}
 
 
 /* ==========================
