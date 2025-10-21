@@ -8,98 +8,96 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- CSS principal -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===== SEÇÃO 1: HERO (texto à esquerda e imagem à direita) ===== -->
-  <section class="hero">
-    <div class="hero-inner">
-      <!-- Lado esquerdo (texto) -->
-      <div class="hero-left">
-        <div class="top-label">Curso Técnico de Desenvolvimento de Sistemas</div>
+  <!-- ===== SEÇÃO 1: HERO com texto à esquerda e imagem à direita ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="top-label">Curso Técnico de Desenvolvimento de Sistemas</div>
 
-        <h1 class="hero-title">
-          Explore o Curso de<br />
-          Desenvolvimento
-        </h1>
+      <h1 class="hero-title">
+        Explore o Curso de<br />
+        Desenvolvimento
+      </h1>
 
-        <p class="hero-desc">
-          Descubra o futuro da educação com o nosso curso técnico, projetado para atender às suas necessidades de aprendizado. Com uma variedade de disciplinas e especialistas na área, oferecemos uma oportunidade única de desenvolvimento profissional e pessoal.
-        </p>
+      <p class="hero-desc">
+        Descubra o futuro da educação com o nosso curso técnico, projetado para atender às suas necessidades de aprendizado. Com uma variedade de disciplinas e especialistas na área, oferecemos uma oportunidade única de desenvolvimento profissional e pessoal.
+      </p>
 
-<<<<<<< HEAD
-        <a href="sobre.html" class="btn-ghost">Saiba mais</a>
-      </div>
-=======
-     <script>
-     const saibaMaisBtn = document.getElementById('saibaMaisBtn');
-    saibaMaisBtn.addEventListener('click', () => {
-    window.location.href = 'sobre.html';
-    });
-      </script>
->>>>>>> e173544092d7f18e22675d2a134b8dc63f8cf2d1
-
-      <!-- Lado direito (imagem) -->
-      <div class="hero-right">
-        <img src="imagem1.jpeg" alt="Sala e decoração">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SEÇÃO 2: Destaques (Cards) ===== -->
-  <h2 class="section-title">Destaques</h2>
-
-  <div class="cards">
-    <!-- Cartão 1 -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="https://via.placeholder.com/300x400?text=Professores" alt="Professores" class="card-image">
-          <div class="card-label">Professores</div>
-        </div>
-        <div class="card-back">
-          <p>Informações sobre os professores: formação, experiência e disciplinas que lecionam.</p>
-        </div>
-      </div>
+      <!-- Botão corrigido -->
+      <a href="sobre.html" class="btn-ghost">Saiba mais</a>
     </div>
 
-    <!-- Cartão 2 -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="https://via.placeholder.com/300x400?text=Projetos" alt="Projetos" class="card-image">
-          <div class="card-label">Projetos</div>
-        </div>
-        <div class="card-back">
-          <p>Projetos desenvolvidos pelos alunos, incluindo feiras, robótica e sustentabilidade.</p>
-        </div>
-      </div>
+    <!-- Imagem à direita (mantém proporção e posição) -->
+    <div class="hero-right">
+      <img src="imagem1.jpeg" alt="Sala e decoração">
     </div>
+  </div>
+</section>
 
-    <!-- Cartão 3 -->
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="https://via.placeholder.com/300x400?text=Escola" alt="Escola" class="card-image">
-          <div class="card-label">Escola</div>
-        </div>
-        <div class="card-back">
-          <p>Informações sobre a estrutura da escola, salas, laboratórios e áreas comuns.</p>
-        </div>
+<h2 class="section-title">Destaques</h2>
+
+<div class="cards">
+  <!-- Cartão 1: Professores -->
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="imagem2.1.jpeg" alt="Professores" class="card-image">
+        <div class="card-label">Professores</div>
+      </div>
+      <div class="card-back">
+        <p>Contamos com excelentes professores em nosso curso. O docente que aparece na imagem é o professor Antônio, responsável pelas disciplinas de Ciência da Computação, Análise de Projetos e Sistemas, e Desenvolvimento Front-End.</p>
       </div>
     </div>
   </div>
 
-  <!-- ===== SEÇÃO 3: Atividades ===== -->
-  <section class="atividades">
-    <div class="atividades-inner">
-      <h2 class="atividades-title">Um pouco sobre nossas atividades</h2>
-      <button class="btn-primary" id="btn-clique">Clique aqui</button>
+  <!-- Cartão 2: Projetos -->
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="imagem2.2.jpeg" alt="Projetos" class="card-image">
+        <div class="card-label">Projetos</div>
+      </div>
+      <div class="card-back">
+        <p>O projeto apresentado na imagem é uma aranha robótica desenvolvida pela turma 3CDS. Capaz de se movimentar e realizar uma sequência de dança, este é um dos diversos exemplos das soluções inovadoras que nosso curso é capaz de conceber e implementar.</p>
+      </div>
     </div>
-    <div class="atividades-bg" aria-hidden="true"></div>
-  </section>
+  </div>
+
+  <!-- Cartão 3: Escola -->
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="imagem2.3.png" alt="Escola" class="card-image">
+        <div class="card-label">Escola</div>
+      </div>
+      <div class="card-back">
+        <p>O Colégio Júlio Szymanski é uma instituição de excelência, reconhecida por oferecer uma variedade de cursos de qualidade, como Ciência da Computação, Administração e Formação de Docentes, entre outros. Venha fazer parte dessa escola incrível e prepare-se para um futuro promissor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ===== SEÇÃO 3: Atividades — full-width hero com imagem aparecendo inteira ===== -->
+<section class="atividades">
+  <div class="atividades-inner">
+    <h2 class="atividades-title">Um pouco sobre nossas atividades</h2>
+    <button class="btn-primary" id="btn-clique">Clique aqui</button>
+  </div>
+  <div class="atividades-bg" aria-hidden="true"></div>
+</section>
+
+<!-- ===== Script de redirecionamento ===== -->
+<script>
+  // Quando o botão for clicado, redireciona para a página "clique.html"
+  document.getElementById("btn-clique").addEventListener("click", function() {
+    window.location.href = "clique.html";
+  });
+</script>
+
 
   <!-- ===== SEÇÃO 4: Contato ===== -->
   <section class="contato">

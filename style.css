@@ -10,66 +10,271 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
 }
 .top-label{font-family:"Marcellus",serif;color:var(--cream);font-size:20px;}
 
-/* --- HERO (Seção 1) --- */
-.hero{width:100vw;background:#5B7580;display:flex;justify-content:center;padding:60px 0 40px 0}
-.hero-inner{width:1100px;display:grid;grid-template-columns:1fr 540px;gap:30px;align-items:start;position:relative}
+/* === Correção estrutural geral === */
 
-/* Top label (moved to top-left of hero area) */
-.hero-left{padding-left:10px;position:relative}
-.top-label{position:absolute;left:0;top:-24px;font-family:"Marcellus",serif;color:var(--cream);font-size:18px}
-
-/* Hero title & text */
-.hero-title{font-family:"Marcellus",serif;font-size:72px;line-height:0.95;color:var(--cream);margin-top:12px;margin-bottom:28px;margin-left:6px}
-.hero-desc{font-size:16px;color:var(--cream);max-width:560px;margin-bottom:36px;margin-left:6px;opacity:0.95}
-
-/* Move content um pouco mais para a esquerda (mais espaço entre texto e imagem) */
-.hero-inner{padding-left:48px}
-
-/* Botão */
-.btn-ghost{
-  background:var(--cream);color:var(--dark);border:none;padding:16px 54px;border-radius:40px;font-family:"PT Serif";font-size:16px;cursor:pointer
-}
-
-/* Imagem direita - manter proporção e não cortar */
-.hero-right{width:540px;height:700px;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:#ccc}
-.hero-right img{width:540px;height:auto;display:block}
-
-/* --- Espaçamento entre seções (sutil, uniforme) --- */
-section{padding-top:40px;padding-bottom:60px}
-
-<<<<<<< HEAD
-/* --- SEÇÃO 2: CARDS --- */
+/* O body não deve usar display:flex para o layout principal */
 body {
   margin: 0;
-  font-family: sans-serif;
-  background-color: #92A9AE;
+  font-family: "PT Serif", serif;
+  background-color: #5B7580;
+  color: #102836;
+}
+
+/* Container principal de cada seção */
+section {
+  width: 100%;
+  display: block;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+/* Reset e base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102836}
+
+/* Tipografia */
+:root{
+  --cream:#F6EFD8;
+  --dark:#102836;
+  --muted-bg:#92A9AE;
+}
+
+/* --- HERO (Seção 1) --- */
+.hero{
+  width:100vw;
+  background:#5B7580;
+  display:flex;
+  justify-content:center;
+  padding:60px 0 40px 0;
+}
+
+.hero-inner{
+  width:1100px;
+  display:flex; /* <-- usa flex para alinhar lado a lado */
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+}
+
+.hero-left{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-right:20px;
+  position:relative;
+}
+
+.top-label{
+  font-family:"Marcellus",serif;
+  color:var(--cream);
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.hero-title{
+  font-family:"Marcellus",serif;
+  font-size:72px;
+  line-height:0.95;
+  color:var(--cream);
+  margin-top:12px;
+  margin-bottom:28px;
+}
+
+.hero-desc{
+  font-size:16px;
+  color:var(--cream);
+  max-width:560px;
+  margin-bottom:36px;
+  opacity:0.95;
+}
+
+/* Botão “Saiba mais” */
+.btn-ghost{
+  background:var(--cream);
+  color:var(--dark);
+  border:none;
+  padding:16px 54px;
+  border-radius:40px;
+  font-family:"PT Serif";
+  font-size:16px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+  transition:0.3s;
+}
+
+.btn-ghost:hover{
+  opacity:0.9;
+}
+
+/* Imagem à direita */
+.hero-right{
+  width:540px;
+  height:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-right img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:8px;
+}
+
+/* --- Espaçamento entre seções --- */
+section{padding-top:40px;padding-bottom:60px}
+
+/* ===== SEÇÃO 2: DESTAQUES ===== */
+.section-title {
+  text-align: left;
+  font-family: "Marcellus", serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  background-color: #a9bfce;
+  padding: 60px 0 20px 40px;
+  margin: 0;
+}
+
+/* Container dos cards */
+.cards {
+  background-color: #a9bfce;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px 0 80px;
+  margin: 0;
+}
+
+/* Card em si (mantém as funções e efeitos) */
+.card {
+  width: 280px;
+  height: 380px;
+  perspective: 1000px;
+  border-radius: 15px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card-front {
+  background-color: #fff;
+}
+
+.card-back {
+  background-color: #58727b;
+  color: #fff;
+  transform: rotateY(180deg);
+  display: flex;
   align-items: center;
-}
-=======
->>>>>>> 9b05ce46787c4fa84d94589c00f5cf71aa616e43
-
-
-/* --- ATIVIDADES (Seção 3) --- */
-.atividades{position:relative;display:flex;align-items:center;justify-content:center;height:520px;overflow:visible;background:transparent}
-.atividades-inner{position:relative;z-index:2;text-align:center}
-.atividades-title{font-family:"Marcellus",serif;font-size:64px;color:var(--cream);margin-bottom:22px}
-.btn-primary{background:var(--cream);color:var(--dark);border-radius:40px;padding:18px 56px;border:none;font-family:"PT Serif";font-size:16px;cursor:pointer}
-
-/* Background image: mostrar inteira (não cortar) */
-.atividades-bg{
-  position:absolute;inset:0;z-index:1;
-  background-image:url("images/section3.jpg");
-  background-repeat:no-repeat;
-  background-position:center top;
-  background-size:contain;
-  opacity:1;
-  pointer-events:none;
+  justify-content: center;
+  padding: 20px;
+  font-family: "PT Serif", serif;
+  text-align: center;
 }
 
-.atividades::after{content:"";position:absolute;left:6%;right:6%;bottom:-2px;height:2px;background:rgba(255,255,255,0.06);z-index:3}
+/* Imagens dos cards */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
+.card-label {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 0;
+  border-radius: 0 0 15px 15px;
+}
+
+/* ===== SEÇÃO 3: ATIVIDADES ===== */
+.atividades {
+  background-image: url('imagem3.jpeg'); /* caminho da sua imagem */
+  background-size: cover;      /* cobre toda a seção */
+  background-position: center; /* centraliza a imagem */
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 180px 20px;         /* altura maior */
+  color: #f9f5e7;
+  position: relative;          /* necessário para o overlay */
+  overflow: hidden;            /* garante que o overlay não vaze */
+}
+
+/* Overlay escuro */
+.atividades::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.568); /* escurece a imagem em 40% */
+  z-index: 0;
+}
+
+/* Mantém o conteúdo acima do overlay */
+.atividades-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.atividades-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.atividades-title {
+  font-family: "Marcellus", serif;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.btn-primary {
+  background-color: #f9f5e7;
+  color: #333;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-family: "PT Serif", serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
 /* --- CONTATO (Seção 4) --- */
 .contato{background:oklch(70.552% 0.02639 209.415);display:flex;justify-content:center}
 .contato-inner{width:1100px;display:flex;gap:40px;align-items:flex-start}

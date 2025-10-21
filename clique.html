@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos e Galeria</title>
+  <style>
+    /* ====== ESTILO GERAL ====== */
+    body {
+      margin: 0;
+      font-family: "Marcellus", serif;
+      background-color: #f4f4f7;
+      color: #222;
+    }
 
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #2e3a45;
+      margin: 60px 0 30px;
+    }
+
+    /* ===== BOTÃO FIXO DE VOLTAR ===== */
+    .btn-voltar {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #2e3a45;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+
+    .btn-voltar:hover {
+      background-color: #43545e;
+    }
+
+    /* ====== SEÇÃO PROJETOS ====== */
+    .projetos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 80px 60px;
+      background-color: #e7ebee;
+    }
+
+    .projeto-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .projeto-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .projeto-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .projeto-card .descricao {
+      padding: 20px;
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* ====== SEÇÃO GALERIAS ====== */
+    .galeria-wrapper {
+      position: relative;
+      margin-bottom: 70px;
+    }
+
+    .galeria-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 16px;
+      padding: 0 60px 40px;
+    }
+
+    .galeria-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .galeria-item {
+      flex: 0 0 auto;
+      width: 260px;
+      height: 160px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .galeria-item:hover {
+      transform: scale(1.05);
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.9);
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+      z-index: 500;
+    }
+
+    .seta:hover {
+      background-color: white;
+    }
+
+    .seta.esquerda { left: 10px; }
+    .seta.direita { right: 10px; }
+
+    /* ====== MODAL ====== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .modal.fechar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botão de Voltar -->
+  <button class="btn-voltar" onclick="window.location.href='index.html'">← Voltar</button>
+
+  <!-- ===== SEÇÃO PROJETOS ===== -->
+  <h2>Projetos</h2>
+  <section class="projetos-container">
+    <div class="projeto-card">
+      <img src="https://picsum.photos/400/200?random=1" alt="Projeto 1">
+      <div class="descricao">Descrição do projeto 1.</div>
+    </div>
+    <div class="projeto-card">
+      <img src="https://picsum.photos/400/200?random=2" alt="Projeto 2">
+      <div class="descricao">Descrição do projeto 2.</div>
+    </div>
+    <div class="projeto-card">
+      <img src="https://picsum.photos/400/200?random=3" alt="Projeto 3">
+      <div class="descricao">Descrição do projeto 3.</div>
+    </div>
+    <div class="projeto-card">
+      <img src="https://picsum.photos/400/200?random=4" alt="Projeto 4">
+      <div class="descricao">Descrição do projeto 4.</div>
+    </div>
+  </section>
+
+  <!-- ===== GALERIAS ===== -->
+  <h2>Galeria de Imagens</h2>
+
+  <!-- 4 seções com rolagem lateral -->
+  <div id="galerias">
+    <!-- Repetir 4 blocos (cada um com 10 imagens) -->
+    <div class="galeria-wrapper">
+      <button class="seta esquerda" onclick="rolar(this, -1)">&#10094;</button>
+      <div class="galeria-container">
+        <!-- 10 imagens -->
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=10" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=11" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=12" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=13" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=14" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=15" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=16" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=17" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=18" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=19" onclick="abrirModal(this)"></div>
+      </div>
+      <button class="seta direita" onclick="rolar(this, 1)">&#10095;</button>
+    </div>
+
+    <!-- As próximas 3 seções são cópias com imagens diferentes -->
+    <div class="galeria-wrapper">
+      <button class="seta esquerda" onclick="rolar(this, -1)">&#10094;</button>
+      <div class="galeria-container">
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=20" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=21" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=22" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=23" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=24" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=25" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=26" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=27" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=28" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=29" onclick="abrirModal(this)"></div>
+      </div>
+      <button class="seta direita" onclick="rolar(this, 1)">&#10095;</button>
+    </div>
+
+    <div class="galeria-wrapper">
+      <button class="seta esquerda" onclick="rolar(this, -1)">&#10094;</button>
+      <div class="galeria-container">
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=30" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=31" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=32" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=33" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=34" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=35" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=36" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=37" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=38" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=39" onclick="abrirModal(this)"></div>
+      </div>
+      <button class="seta direita" onclick="rolar(this, 1)">&#10095;</button>
+    </div>
+
+    <div class="galeria-wrapper">
+      <button class="seta esquerda" onclick="rolar(this, -1)">&#10094;</button>
+      <div class="galeria-container">
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=40" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=41" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=42" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=43" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=44" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=45" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=46" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=47" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=48" onclick="abrirModal(this)"></div>
+        <div class="galeria-item"><img src="https://picsum.photos/300/200?random=49" onclick="abrirModal(this)"></div>
+      </div>
+      <button class="seta direita" onclick="rolar(this, 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- ===== MODAL ===== -->
+  <div id="modal" class="modal" onclick="fecharModal()">
+    <span class="modal fechar">&times;</span>
+    <img id="imagemModal" src="" alt="">
+  </div>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    function rolar(botao, direcao) {
+      const galeria = botao.parentElement.querySelector(".galeria-container");
+      const largura = galeria.clientWidth;
+      galeria.scrollBy({ left: direcao * largura * 0.8, behavior: 'smooth' });
+    }
+
+    function abrirModal(img) {
+      const modal = document.getElementById('modal');
+      const imagemModal = document.getElementById('imagemModal');
+      imagemModal.src = img.src;
+      modal.style.display = 'flex';
+    }
+
+    function fecharModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
