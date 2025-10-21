@@ -23,12 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // REDES SOCIAIS (ICONS CLICK)
 // ===============================
 document.addEventListener("DOMContentLoaded", function () {
-  // Corrigido seletor: precisa de "." antes de 'social-icons'
   const icones = document.querySelectorAll(".social-icons img");
 
   icones.forEach(img => {
     img.addEventListener("click", function () {
-      // Pega o alt ou o nome do arquivo como fallback
+      
       const nome = img.alt ? img.alt.toLowerCase() : img.src.toLowerCase();
       let url = "";
 
