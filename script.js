@@ -1,3 +1,6 @@
+// ===============================
+// GIRO DE CARTÕES
+// ===============================
 document.addEventListener("DOMContentLoaded", function () {
   const images = document.querySelectorAll(".card-image");
 
@@ -16,12 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-document.addEventListener("DOMContentLoaded", function () 
+// ===============================
+// BOTÕES (DECLARAÇÃO)
+–===============================
+document.addEventListener("DOMContentLoaded", function () {
   const btnSaiba = document.getElementById("btn-saiba");
   const btnClique = document.getElementById("btn-clique");
   const btnEnviar = document.getElementById("btn-enviar");
   const btnCadastre = document.getElementById("btn-cadastre");
+});
 
 // ===============================
 // REDES SOCIAIS (ICONS CLICK)
@@ -31,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   icones.forEach(img => {
     img.addEventListener("click", function () {
-      
       const nome = img.alt ? img.alt.toLowerCase() : img.src.toLowerCase();
       let url = "";
 
@@ -74,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
 // ===============================
 // FORMULÁRIO DE CONTATO - MENSAGEM DE SUCESSO
 // ===============================
@@ -108,47 +114,58 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-// ====== LOGIN ======
+
+// ===============================
+// LOGIN
+// ===============================
 const formLogin = document.getElementById("form-login");
 const msgLogin = document.getElementById("mensagem-login");
 
-// Exemplo simples
 const usuarioValido = "admin";
 const senhaValida = "1234";
 
-formLogin.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const usuario = document.getElementById("usuario").value.trim();
-  const senha = document.getElementById("senha").value.trim();
+if (formLogin) {
+  formLogin.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const usuario = document.getElementById("usuario").value.trim();
+    const senha = document.getElementById("senha").value.trim();
 
-  if (usuario === usuarioValido && senha === senhaValida) {
-    mostrarMensagem(msgLogin, "Login realizado com sucesso! ✅", "#a9e4a9");
-  } else {
-    mostrarMensagem(msgLogin, "Usuário ou senha incorretos ❌", "#ffaaaa");
-  }
+    if (usuario === usuarioValido && senha === senhaValida) {
+      mostrarMensagem(msgLogin, "Login realizado com sucesso! ✅", "#a9e4a9");
+    } else {
+      mostrarMensagem(msgLogin, "Usuário ou senha incorretos ❌", "#ffaaaa");
+    }
 
-  formLogin.reset();
-});
+    formLogin.reset();
+  });
+}
 
-// ====== CADASTRO DE E-MAIL ======
+// ===============================
+// CADASTRO DE E-MAIL
+// ===============================
 const formEmail = document.getElementById("form-email");
 const msgEmail = document.getElementById("mensagem-sucesso");
 
-formEmail.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const email = document.getElementById("email").value.trim();
+if (formEmail) {
+  formEmail.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
 
-  if (email === "" || !email.includes("@")) {
-    mostrarMensagem(msgEmail, "Por favor, insira um e-mail válido.", "#ffaaaa");
-    return;
-  }
+    if (email === "" || !email.includes("@")) {
+      mostrarMensagem(msgEmail, "Por favor, insira um e-mail válido.", "#ffaaaa");
+      return;
+    }
 
-  mostrarMensagem(msgEmail, "E-mail cadastrado com sucesso! ✅", "#a9e4a9");
-  formEmail.reset();
-});
+    mostrarMensagem(msgEmail, "Conta criada com sucesso! ✅", "#a9e4a9");
+    formEmail.reset();
+  });
+}
 
-// ====== Função genérica ======
+// ===============================
+// FUNÇÃO GENÉRICA DE MENSAGEM
+// ===============================
 function mostrarMensagem(elemento, texto, cor) {
+  if (!elemento) return;
   elemento.textContent = texto;
   elemento.style.color = cor;
   elemento.classList.add("visivel");
