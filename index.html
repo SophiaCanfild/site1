@@ -8,13 +8,15 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- CSS principal -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===== SEÇÃO 1: HERO com texto à esquerda e imagem à direita ===== -->
+  <!-- ===== SEÇÃO 1: HERO (texto à esquerda e imagem à direita) ===== -->
   <section class="hero">
     <div class="hero-inner">
+      <!-- Lado esquerdo (texto) -->
       <div class="hero-left">
         <div class="top-label">Curso Técnico de Desenvolvimento de Sistemas</div>
 
@@ -26,210 +28,93 @@
         <p class="hero-desc">
           Descubra o futuro da educação com o nosso curso técnico, projetado para atender às suas necessidades de aprendizado. Com uma variedade de disciplinas e especialistas na área, oferecemos uma oportunidade única de desenvolvimento profissional e pessoal.
         </p>
-       <button id="saibaMaisBtn" class="btn">Saiba mais</button>
 
+<<<<<<< HEAD
+        <a href="sobre.html" class="btn-ghost">Saiba mais</a>
+      </div>
+=======
      <script>
      const saibaMaisBtn = document.getElementById('saibaMaisBtn');
     saibaMaisBtn.addEventListener('click', () => {
     window.location.href = 'sobre.html';
     });
       </script>
+>>>>>>> e173544092d7f18e22675d2a134b8dc63f8cf2d1
 
+      <!-- Lado direito (imagem) -->
       <div class="hero-right">
         <img src="imagem1.jpeg" alt="Sala e decoração">
       </div>
     </div>
   </section>
 
+  <!-- ===== SEÇÃO 2: Destaques (Cards) ===== -->
+  <h2 class="section-title">Destaques</h2>
 
-
-
- <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>Destaques</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-    }
-
-    .destaques-area {
-      background-color: #a9c1d9; /* cinza azulado escuro */
-      padding: 40px;
-    }
-
-    .titulo-destaques {
-      color: #ffffff;
-      font-size: 2.2em;
-      text-align: left;
-      margin-bottom: 30px;
-    }
-
-    .cards-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      width: 200px;
-      height: 300px;
-      perspective: 1000px;
-      position: relative;
-      overflow: hidden; /* ✅ MANTÉM O TAMANHO FIXO DO CARD */
-      cursor: pointer;
-    }
-
-    .card-inner {
-      width: 100%;
-      height: 100%;
-      position: absolute; /* ✅ IMPORTANTE: fica sobre o card */
-      top: 0;
-      left: 0;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-    }
-
-    .card:hover .card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .card-front,
-    .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .card-front {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .card-front img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-label {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      text-align: center;
-      font-size: 1.1em;
-      padding: 8px 0;
-      font-weight: bold;
-    }
-
-    .card-back {
-      background-color: white;
-      color: #333;
-      transform: rotateY(180deg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="destaques-area">
-    <h2 class="titulo-destaques">Destaques</h2>
-
-    <div class="cards-container">
-      
-      <!-- Card 1 -->
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="imagem2.1.jpeg" alt="Professores">
-            <div class="card-label">Professores</div>
-          </div>
-          <div class="card-back">
-            <p>Contamos com excelentes professores em nosso curso. O docente que aparece na imagem é o professor Antônio, responsável pelas disciplinas de Ciência da Computação, Análise de Projetos e Sistemas, e Desenvolvimento Front-End.</p>
-          </div>
+  <div class="cards">
+    <!-- Cartão 1 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/300x400?text=Professores" alt="Professores" class="card-image">
+          <div class="card-label">Professores</div>
+        </div>
+        <div class="card-back">
+          <p>Informações sobre os professores: formação, experiência e disciplinas que lecionam.</p>
         </div>
       </div>
+    </div>
 
-      <!-- Card 2 -->
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="imagem2.2.jpeg" alt="Projetos">
-            <div class="card-label">Projetos</div>
-          </div>
-          <div class="card-back">
-            <p>O projeto apresentado na imagem é uma aranha robótica desenvolvida pela turma 3CDS. Capaz de se movimentar e realizar uma sequência de dança, este é um dos diversos exemplos das soluções inovadoras que nosso curso é capaz de conceber e implementar.</p>
-          </div>
+    <!-- Cartão 2 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/300x400?text=Projetos" alt="Projetos" class="card-image">
+          <div class="card-label">Projetos</div>
+        </div>
+        <div class="card-back">
+          <p>Projetos desenvolvidos pelos alunos, incluindo feiras, robótica e sustentabilidade.</p>
         </div>
       </div>
+    </div>
 
-      <!-- Card 3 -->
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="imagem2.3.png" alt="Escola">
-            <div class="card-label">Escola</div>
-          </div>
-          <div class="card-back">
-            <p>O Colégio Júlio Szymanski é uma instituição de excelência, reconhecida por oferecer uma variedade de cursos de qualidade, como Ciência da Computação, Administração e Formação de Docentes, entre outros. Venha fazer parte dessa escola incrível e prepare-se para um futuro promissor.</p>
-          </div>
+    <!-- Cartão 3 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://via.placeholder.com/300x400?text=Escola" alt="Escola" class="card-image">
+          <div class="card-label">Escola</div>
+        </div>
+        <div class="card-back">
+          <p>Informações sobre a estrutura da escola, salas, laboratórios e áreas comuns.</p>
         </div>
       </div>
-
     </div>
   </div>
 
-</body>
-</html>
-
-
-
-  <!-- ===== SEÇÃO 3: Atividades — full-width hero com imagem aparecendo inteira ===== -->
+  <!-- ===== SEÇÃO 3: Atividades ===== -->
   <section class="atividades">
     <div class="atividades-inner">
       <h2 class="atividades-title">Um pouco sobre nossas atividades</h2>
       <button class="btn-primary" id="btn-clique">Clique aqui</button>
     </div>
-    <div class="atividades-bg" 
-  aria-hidden="true"></div>
+    <div class="atividades-bg" aria-hidden="true"></div>
   </section>
 
- <!-- ===== SEÇÃO 4: Contato & redes sociais ===== -->
+  <!-- ===== SEÇÃO 4: Contato ===== -->
   <section class="contato">
     <div class="contato-inner">
+
       <div class="contato-left">
         <h3 class="redes-title">Siga-nos nas redes sociais</h3>
         <div class="social-icons">
-          <a href="https://www.instagram.com/colegioszymanski?igsh=MWIwODh5cGh0NTBoaA==" target="_blank">
-            <img src="insta.png" alt="Instagram">
-          </a>
-          <a href="https://www.facebook.com/share/19kvC9XmbA/" target="_blank">
-            <img src="face.png" alt="Facebook">
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=%2B554136424089&fbclid=IwVERDUANh3KFleHRuA2FlbQIxMAABHjakSyA-fBkBifkZD_ywjv69ZhaIzHSEyXz0hn0S3yJziTp4RSoIUS5MW1Ua_aem_JjbN2UK18z0WukvSVuUKJA" target="_blank">
-            <img src="whats.png" alt="WhatsApp">
-          </a>
+          <img src="insta.png" alt="Instagram">
+          <img src="face.png" alt="Facebook">
+          <img src="whats.png" alt="WhatsApp">
         </div>
       </div>
-      
+
       <div class="contato-right">
-        <!-- Converse conosco (agora à direita, acima do formulário) -->
         <h2 class="section-big">Converse<br />conosco</h2>
 
         <form class="contact-form" onsubmit="return false;">
@@ -251,7 +136,7 @@
     </div>
   </section>
 
-  <!-- ===== SEÇÃO 5: Footer com newsletter ===== -->
+  <!-- ===== SEÇÃO 5: Footer ===== -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-left">
@@ -269,7 +154,6 @@
 
       <div class="footer-right">
         <p class="newsletter-text">Cadastre seu endereço de e-mail para receber novidades e atualizações.</p>
-
         <div class="newsletter">
           <input type="email" placeholder="Endereço de e-mail">
           <button class="btn-primary small" id="btn-cadastre">Cadastre-se</button>
@@ -278,6 +162,7 @@
     </div>
   </footer>
 
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
@@ -325,3 +210,4 @@
 
   </div>
 </section>
+
