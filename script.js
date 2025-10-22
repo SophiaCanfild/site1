@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (icones && icones.length) {
       icones.forEach(img => {
         img.addEventListener("click", function () {
+          // tenta atributo data-link primeiro (mais confiável), depois alt, depois src
           const dataLink = img.getAttribute("data-link");
           const nome = (img.alt || img.src || "").toLowerCase();
           let url = dataLink || "";
@@ -80,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // FORMULÁRIO DE CONTATO - MENSAGEM DE SUCESSO
   // ===============================
   try {
+    // tenta selecionar por id primeiro, senão pega o primeiro form da página
     const formContato = document.getElementById("form-contato") || document.querySelector("form");
     const botaoEnviar = document.getElementById("btn-enviar");
 
@@ -137,11 +139,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ===============================
-  // CADASTRO DE E-MAIL + SENHA
+  // CADASTRO DE E-MAIL
   // ===============================
   try {
     const formEmail = document.getElementById("form-email");
-    const formSenha = document.getElementById("form-senha");
     const msgEmail = document.getElementById("mensagem-sucesso");
 
     if (formEmail && msgEmail) {
@@ -155,32 +156,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
         }
 
-        // Mostra segunda etapa (senha)
-        formEmail.style.display = "none";
-        formSenha.style.display = "flex";
-        mostrarMensagem(msgEmail, "E-mail válido! Agora crie uma senha 🔒", "#a9e4a9");
-      });
-    }
-
-    if (formSenha && msgEmail) {
-      formSenha.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const senhaEl = document.getElementById("senha-cadastro");
-        const senha = senhaEl ? senhaEl.value.trim() : "";
-
-        if (senha.length < 4) {
-          mostrarMensagem(msgEmail, "A senha deve ter pelo menos 4 caracteres.", "#ffaaaa");
-          return;
-        }
-
-        mostrarMensagem(msgEmail, "✅ Conta criada com sucesso!", "#a9e4a9");
-
-        // "Simula" redirecionamento após 2 segundos
-        setTimeout(() => {
-          window.location.href = "pagina-principal.html"; // troque se necessário
-        }, 2000);
-
-        formSenha.reset();
+        mostrarMensagem(msgEmail, "E-mail cadastrado com sucesso! ✅", "#a9e4a9");
+        formEmail.reset();
       });
     }
   } catch (err) {
@@ -190,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===============================
   // FUNÇÃO GENÉRICA PARA MENSAGENS
   // ===============================
+  // (mantive comportamento original, só deixei mais defensivo)
   function mostrarMensagem(elemento, texto, cor) {
     if (!elemento) {
       console.warn("mostrarMensagem: elemento inexistente", texto);
@@ -199,12 +177,16 @@ document.addEventListener("DOMContentLoaded", function () {
     elemento.style.color = cor || "";
     elemento.classList.add("visivel");
 
-    if (elemento.timeout) clearTimeout(elemento.timeout);
+    // protege caso elemento.timeout não exista
+    if (elemento.timeout) {
+      clearTimeout(elemento.timeout);
+    }
     elemento.timeout = setTimeout(() => {
       elemento.classList.remove("visivel");
       elemento.timeout = null;
     }, 4000);
   }
 
+  // torna mostrarMensagem disponível globalmente (se alguma chamada externa já usa)
   window.mostrarMensagem = mostrarMensagem;
 });
