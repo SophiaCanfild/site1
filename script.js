@@ -439,7 +439,6 @@ html
   </section>
 
 
-<<<<<<< HEAD
       <div class="footer-center">
         <img src="imagem5.png" alt="Ilustração" class="footer-illu">
         <nav class="footer-links">
@@ -463,24 +462,18 @@ html
   <script src="script.js"></script>
 </body>
 </html>
-=======
-  <!-- Seção Login + Cadastro + Imagens -->
->>>>>>> d98f015701e57a389a7bc64b1ab6bd94048c47df
 <section class="login-cadastro-secao">
   <div class="conteudo-login-cadastro">
     
     <!-- Lado Esquerdo -->
     <div class="lado-esquerdo">
-<<<<<<< HEAD
       <h2>Desenvolvimento de sistemas</h2>
       <img src="paragrafo_1_banner.jpg" alt="Desenvolvimento de sistemas" class="img-banner">
-=======
       <div class="titulo-bloco">
         <h2>Desenvolvimento de<br><span>sistemas</span></h2>
         <img src="imagem5.png" alt="Desenvolvimento de sistemas" class="img-banner">
       </div>
 
->>>>>>> d98f015701e57a389a7bc64b1ab6bd94048c47df
       <p class="redes-sociais">
         Siga-nos no 
         <a href="#">Facebook</a> 
