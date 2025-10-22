@@ -26,37 +26,30 @@ document.addEventListener("DOMContentLoaded", function ()
   // ===============================
   // REDES SOCIAIS (ICONS CLICK)
   // ===============================
-  try {
-    const icones = document.querySelectorAll(".social-icons img");
-    if (icones && icones.length) {
-      icones.forEach(img => {
-        img.addEventListener("click", function () {
-          // tenta atributo data-link primeiro (mais confiável), depois alt, depois src
-          const dataLink = img.getAttribute("data-link");
-          const nome = (img.alt || img.src || "").toLowerCase();
-          let url = dataLink || "";
+  
+document.addEventListener("DOMContentLoaded", function ()[
+ const icones = document.querySelectorAll(".social-icons img");
 
-          if (!url) {
-            if (nome.includes("insta") || nome.includes("instagram")) {
-              url = "https://www.instagram.com/colegioszymanski";
-            } else if (nome.includes("face") || nome.includes("facebook")) {
-              url = "https://www.facebook.com/share/19kvC9XmbA/";
-            } else if (nome.includes("whats") || nome.includes("whatsapp")) {
-              url = "https://api.whatsapp.com/send?phone=%2B554136424089";
-            }
-          }
+ icones.forEach(img => {
+  img.addEventListener("click", function () {
 
-          if (url) {
-            window.open(url, "_blank");
-          } else {
-            console.warn("Não foi possível identificar o link do ícone:", img);
-          }
-        });
-      });
-    }
-  } catch (err) {
-    console.error("Erro no bloco de redes sociais:", err);
-  }
+   const nome img.alt? img.alt.toLowerCase(): img.src.toLowerCase();
+   let url = "";
+
+   if (nome.includes ("insta")) {
+    url = "https://www.instagram.com/colegioszymanski?igsh-MWIwODh5cGhØNTBoaA==";
+   } else if (nome.includes("face")) {
+   url = "https://www.facebook.com/share/19kvC9XmbA/";
+   } else if (nome.includes("whats")) {
+   url = "https://api.whatsapp.com/send?phone=%2B554136424089";
+}
+
+if (url) {
+  window.open(url, "_blank"); // abre em nova aba
+} else {
+  console.warn("Não foi possível identificar o link do ícone:", img);
+}
+});
 
   // ===============================
   // ANIMAÇÃO DE CLIQUE NOS BOTÕES
