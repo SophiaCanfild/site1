@@ -112,85 +112,82 @@ document.addEventListener("DOMContentLoaded", function ()
   }
 
   // ===============================
-  // LOGIN
-  // ===============================
-  try {
-    const formLogin = document.getElementById("form-login");
-    const msgLogin = document.getElementById("mensagem-login");
+// LOGIN
+// ===============================
+try {
+  const formLogin = document.getElementById("form-login");
+  const msgLogin = document.getElementById("mensagem-login");
 
-    if (formLogin && msgLogin) {
-      const usuarioValido = "admin";
-      const senhaValida = "1234";
+  if (formLogin && msgLogin) {
+    const usuarioValido = "admin";
+    const senhaValida = "1234";
 
-      formLogin.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const usuarioEl = document.getElementById("usuario");
-        const senhaEl = document.getElementById("senha");
-        const usuario = usuarioEl ? usuarioEl.value.trim() : "";
-        const senha = senhaEl ? senhaEl.value.trim() : "";
+    formLogin.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-        if (usuario === usuarioValido && senha === senhaValida) {
-          mostrarMensagem(msgLogin, "Login realizado com sucesso! ✅", "#a9e4a9");
-        } else {
-          mostrarMensagem(msgLogin, "Usuário ou senha incorretos ❌", "#ffaaaa");
-        }
+      const usuario = document.getElementById("usuario")?.value.trim() || "";
+      const senha = document.getElementById("senha")?.value.trim() || "";
 
-        formLogin.reset();
-      });
-    }
-  } catch (err) {
-    console.error("Erro no bloco de login:", err);
+      if (usuario === usuarioValido && senha === senhaValida) {
+        mostrarMensagem(msgLogin, "✅ Login realizado com sucesso!", "#a9e4a9");
+      } else {
+        mostrarMensagem(msgLogin, "❌ Usuário ou senha incorretos.", "#ffaaaa");
+      }
+
+      formLogin.reset();
+    });
+  }
+} catch (err) {
+  console.error("Erro no bloco de login:", err);
+}
+
+// ===============================
+// CADASTRO DE E-MAIL
+// ===============================
+try {
+  const formEmail = document.getElementById("form-email");
+  const msgEmail = document.getElementById("mensagem-sucesso");
+
+  if (formEmail && msgEmail) {
+    formEmail.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const emailEl = document.getElementById("email");
+      const email = emailEl ? emailEl.value.trim() : "";
+
+      if (email === "" || !email.includes("@")) {
+        mostrarMensagem(msgEmail, "⚠️ Por favor, insira um e-mail válido.", "#ffaaaa");
+        return;
+      }
+
+      mostrarMensagem(msgEmail, "✅ Conta criada com sucesso!", "#a9e4a9");
+      formEmail.reset();
+    });
+  }
+} catch (err) {
+  console.error("Erro no bloco de cadastro de e-mail:", err);
+}
+
+// ===============================
+// FUNÇÃO GENÉRICA PARA MENSAGENS
+// ===============================
+function mostrarMensagem(elemento, texto, cor) {
+  if (!elemento) {
+    console.warn("mostrarMensagem: elemento inexistente", texto);
+    return;
   }
 
-  // ===============================
-  // CADASTRO DE E-MAIL
-  // ===============================
-  try {
-    const formEmail = document.getElementById("form-email");
-    const msgEmail = document.getElementById("mensagem-sucesso");
+  elemento.textContent = texto;
+  elemento.style.color = cor || "";
+  elemento.classList.add("visivel");
 
-    if (formEmail && msgEmail) {
-      formEmail.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const emailEl = document.getElementById("email");
-        const email = emailEl ? emailEl.value.trim() : "";
+  // remove mensagem após 4s
+  clearTimeout(elemento.timeout);
+  elemento.timeout = setTimeout(() => {
+    elemento.classList.remove("visivel");
+    elemento.timeout = null;
+  }, 4000);
+}
 
-        if (email === "" || !email.includes("@")) {
-          mostrarMensagem(msgEmail, "Por favor, insira um e-mail válido.", "#ffaaaa");
-          return;
-        }
-
-        mostrarMensagem(msgEmail, "E-mail cadastrado com sucesso! ✅", "#a9e4a9");
-        formEmail.reset();
-      });
-    }
-  } catch (err) {
-    console.error("Erro no bloco de cadastro de e-mail:", err);
-  }
-
-  // ===============================
-  // FUNÇÃO GENÉRICA PARA MENSAGENS
-  // ===============================
-  // (mantive comportamento original, só deixei mais defensivo)
-  function mostrarMensagem(elemento, texto, cor) {
-    if (!elemento) {
-      console.warn("mostrarMensagem: elemento inexistente", texto);
-      return;
-    }
-    elemento.textContent = texto;
-    elemento.style.color = cor || "";
-    elemento.classList.add("visivel");
-
-    // protege caso elemento.timeout não exista
-    if (elemento.timeout) {
-      clearTimeout(elemento.timeout);
-    }
-    elemento.timeout = setTimeout(() => {
-      elemento.classList.remove("visivel");
-      elemento.timeout = null;
-    }, 4000);
-  }
-
-  // torna mostrarMensagem disponível globalmente (se alguma chamada externa já usa)
-  window.mostrarMensagem = mostrarMensagem;
-});
+// Disponibiliza globalmente
+window.mostrarMensagem = mostrarMensagem;
