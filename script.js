@@ -1,24 +1,28 @@
-// Código corrigido e robusto: tudo dentro de um único DOMContentLoaded
 document.addEventListener("DOMContentLoaded", function () {
-  // ===============================
-  // CARTÕES COM ANIMAÇÃO DE GIRO
-  // ===============================
-  try {
-    const images = document.querySelectorAll(".card-image");
-    if (images && images.length) {
-      images.forEach(image => {
-        image.addEventListener("click", function () {
-          const card = image.closest(".card");
-          if (!card) return;
-          card.classList.add("flipped");
-          setTimeout(() => card.classList.remove("flipped"), 10000);
-        });
-      });
-    }
-  } catch (err) {
-    console.error("Erro no bloco de cartões:", err);
-  }
+  const images = document.querySelectorAll(".card-image");
 
+  images.forEach(image => {
+    image.addEventListener("click", function () {
+      const card = image.closest(".card");
+
+      // Gira o cartão
+      card.classList.add("flipped");
+
+      // Volta após 10 segundos (10000 milissegundos)
+      setTimeout(() => {
+        card.classList.remove("flipped");
+      }, 10000);
+    });
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () 
+  const btnSaiba = document.getElementById("btn-saiba");
+  const btnClique = document.getElementById("btn-clique");
+  const btnEnviar = document.getElementById("btn-enviar");
+  const btnCadastre = document.getElementById("btn-cadastre");
+  
   // ===============================
   // REDES SOCIAIS (ICONS CLICK)
   // ===============================
