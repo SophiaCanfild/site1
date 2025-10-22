@@ -1,57 +1,42 @@
-// Código corrigido e robusto: tudo dentro de um único DOMContentLoaded
 document.addEventListener("DOMContentLoaded", function () {
   // ===============================
   // CARTÕES COM ANIMAÇÃO DE GIRO
   // ===============================
   try {
     const images = document.querySelectorAll(".card-image");
-    if (images && images.length) {
-      images.forEach(image => {
-        image.addEventListener("click", function () {
-          const card = image.closest(".card");
-          if (!card) return;
-          card.classList.add("flipped");
-          setTimeout(() => card.classList.remove("flipped"), 10000);
-        });
+    images.forEach(image => {
+      image.addEventListener("click", function () {
+        const card = image.closest(".card");
+        if (!card) return;
+        card.classList.add("flipped");
+        setTimeout(() => card.classList.remove("flipped"), 10000);
       });
-    }
+    });
   } catch (err) {
-    console.error("Erro no bloco de cartões:", err);
+    console.error("Erro nos cartões:", err);
   }
 
   // ===============================
-  // REDES SOCIAIS (ICONS CLICK)
+  // REDES SOCIAIS
   // ===============================
   try {
     const icones = document.querySelectorAll(".social-icons img");
-    if (icones && icones.length) {
-      icones.forEach(img => {
-        img.addEventListener("click", function () {
-          // tenta atributo data-link primeiro (mais confiável), depois alt, depois src
-          const dataLink = img.getAttribute("data-link");
-          const nome = (img.alt || img.src || "").toLowerCase();
-          let url = dataLink || "";
+    icones.forEach(img => {
+      img.addEventListener("click", function () {
+        let url = img.dataset.link || "";
+        const nome = (img.alt || "").toLowerCase();
 
-          if (!url) {
-            if (nome.includes("insta") || nome.includes("instagram")) {
-              url = "https://www.instagram.com/colegioszymanski";
-            } else if (nome.includes("face") || nome.includes("facebook")) {
-              url = "https://www.facebook.com/share/19kvC9XmbA/";
-            } else if (nome.includes("whats") || nome.includes("whatsapp")) {
-              url = "https://api.whatsapp.com/send?phone=%2B554136424089";
-            }
-          }
+        if (!url) {
+          if (nome.includes("insta")) url = "https://www.instagram.com/colegioszymanski";
+          else if (nome.includes("face")) url = "https://www.facebook.com/share/19kvC9XmbA/";
+          else if (nome.includes("whats")) url = "https://api.whatsapp.com/send?phone=%2B554136424089";
+        }
 
-          if (url) {
-            window.open(url, "_blank");
-          } else {
-            console.warn("Não foi possível identificar o link do ícone:", img);
-          }
-        });
+        if (url) window.open(url, "_blank");
       });
-    }
+    });
   } catch (err) {
-    console.error("Erro no bloco de redes sociais:", err);
+    console.error("Erro nas redes sociais:", err);
   }
 
   // ===============================
@@ -65,31 +50,28 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("btn-cadastre")
     ].filter(Boolean);
 
-    if (botoes.length) {
-      botoes.forEach(botao => {
-        botao.addEventListener("click", () => {
-          botao.classList.add("animar-botao");
-          setTimeout(() => botao.classList.remove("animar-botao"), 400);
-        });
+    botoes.forEach(botao => {
+      botao.addEventListener("click", () => {
+        botao.classList.add("animar-botao");
+        setTimeout(() => botao.classList.remove("animar-botao"), 400);
       });
-    }
+    });
   } catch (err) {
-    console.error("Erro no bloco de animação de botões:", err);
+    console.error("Erro nos botões:", err);
   }
 
   // ===============================
-  // FORMULÁRIO DE CONTATO - MENSAGEM DE SUCESSO
+  // FORMULÁRIO DE CONTATO
   // ===============================
   try {
-    // tenta selecionar por id primeiro, senão pega o primeiro form da página
-    const formContato = document.getElementById("form-contato") || document.querySelector("form");
+    const formContato = document.getElementById("form-contato");
     const botaoEnviar = document.getElementById("btn-enviar");
 
     if (formContato && botaoEnviar) {
       formContato.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        let msgSucesso = formContato.querySelector(".msg-sucesso") || document.querySelector(".msg-sucesso");
+        let msgSucesso = formContato.querySelector(".msg-sucesso");
         if (!msgSucesso) {
           msgSucesso = document.createElement("p");
           msgSucesso.className = "msg-sucesso";
@@ -104,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   } catch (err) {
-    console.error("Erro no bloco de formulário de contato:", err);
+    console.error("Erro no formulário de contato:", err);
   }
 
   // ===============================
@@ -120,73 +102,82 @@ document.addEventListener("DOMContentLoaded", function () {
 
       formLogin.addEventListener("submit", (e) => {
         e.preventDefault();
-        const usuarioEl = document.getElementById("usuario");
-        const senhaEl = document.getElementById("senha");
-        const usuario = usuarioEl ? usuarioEl.value.trim() : "";
-        const senha = senhaEl ? senhaEl.value.trim() : "";
+        const usuario = document.getElementById("usuario")?.value.trim() || "";
+        const senha = document.getElementById("senha")?.value.trim() || "";
 
         if (usuario === usuarioValido && senha === senhaValida) {
-          mostrarMensagem(msgLogin, "Login realizado com sucesso! ✅", "#a9e4a9");
+          mostrarMensagem(msgLogin, "✅ Login realizado com sucesso!", "#a9e4a9");
         } else {
-          mostrarMensagem(msgLogin, "Usuário ou senha incorretos ❌", "#ffaaaa");
+          mostrarMensagem(msgLogin, "❌ Usuário ou senha incorretos.", "#ffaaaa");
         }
 
         formLogin.reset();
       });
     }
   } catch (err) {
-    console.error("Erro no bloco de login:", err);
+    console.error("Erro no login:", err);
   }
 
   // ===============================
-  // CADASTRO DE E-MAIL
+  // CADASTRO DE E-MAIL E SENHA
   // ===============================
   try {
     const formEmail = document.getElementById("form-email");
+    const formSenha = document.getElementById("form-senha");
     const msgEmail = document.getElementById("mensagem-sucesso");
 
-    if (formEmail && msgEmail) {
+    if (formEmail && formSenha && msgEmail) {
       formEmail.addEventListener("submit", (e) => {
         e.preventDefault();
-        const emailEl = document.getElementById("email");
-        const email = emailEl ? emailEl.value.trim() : "";
+        const email = document.getElementById("email")?.value.trim() || "";
 
         if (email === "" || !email.includes("@")) {
-          mostrarMensagem(msgEmail, "Por favor, insira um e-mail válido.", "#ffaaaa");
+          mostrarMensagem(msgEmail, "⚠️ Por favor, insira um e-mail válido.", "#ffaaaa");
           return;
         }
 
-        mostrarMensagem(msgEmail, "E-mail cadastrado com sucesso! ✅", "#a9e4a9");
-        formEmail.reset();
+        // Avança para senha
+        formEmail.style.display = "none";
+        formSenha.style.display = "flex";
+        mostrarMensagem(msgEmail, "E-mail válido! Agora crie uma senha 🔒", "#a9e4a9");
+      });
+
+      formSenha.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const senha = document.getElementById("senha-cadastro")?.value.trim() || "";
+
+        if (senha.length < 4) {
+          mostrarMensagem(msgEmail, "⚠️ A senha deve ter pelo menos 4 caracteres.", "#ffaaaa");
+          return;
+        }
+
+        // ✅ Mensagem de sucesso
+        mostrarMensagem(msgEmail, "✅ Conta criada com sucesso!", "#a9e4a9");
+
+        // Simula redirecionamento
+        setTimeout(() => {
+          window.location.href = "pagina-principal.html";
+        }, 2000);
+
+        formSenha.reset();
       });
     }
   } catch (err) {
-    console.error("Erro no bloco de cadastro de e-mail:", err);
+    console.error("Erro no cadastro:", err);
   }
 
   // ===============================
-  // FUNÇÃO GENÉRICA PARA MENSAGENS
+  // FUNÇÃO PARA EXIBIR MENSAGENS
   // ===============================
-  // (mantive comportamento original, só deixei mais defensivo)
   function mostrarMensagem(elemento, texto, cor) {
-    if (!elemento) {
-      console.warn("mostrarMensagem: elemento inexistente", texto);
-      return;
-    }
+    if (!elemento) return;
     elemento.textContent = texto;
-    elemento.style.color = cor || "";
+    elemento.style.color = cor || "#000";
     elemento.classList.add("visivel");
 
-    // protege caso elemento.timeout não exista
-    if (elemento.timeout) {
-      clearTimeout(elemento.timeout);
-    }
+    if (elemento.timeout) clearTimeout(elemento.timeout);
     elemento.timeout = setTimeout(() => {
       elemento.classList.remove("visivel");
-      elemento.timeout = null;
     }, 4000);
   }
-
-  // torna mostrarMensagem disponível globalmente (se alguma chamada externa já usa)
-  window.mostrarMensagem = mostrarMensagem;
 });

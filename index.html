@@ -135,17 +135,48 @@
   </section>
 
 
+<<<<<<< HEAD
+      <div class="footer-center">
+        <img src="imagem5.png" alt="Ilustração" class="footer-illu">
+        <nav class="footer-links">
+          <a href="#">Siga-nos</a>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+        </nav>
+      </div>
+
+      <div class="footer-right">
+        <p class="newsletter-text">Cadastre seu endereço de e-mail para receber novidades e atualizações.</p>
+
+        <div class="newsletter">
+          <input type="email" placeholder="Endereço de e-mail">
+          <button class="btn-primary small" id="btn-cadastre">Cadastre-se</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+=======
   <!-- Seção Login + Cadastro + Imagens -->
+>>>>>>> d98f015701e57a389a7bc64b1ab6bd94048c47df
 <section class="login-cadastro-secao">
   <div class="conteudo-login-cadastro">
     
-    <!-- Texto e imagem à esquerda -->
+    <!-- Lado Esquerdo -->
     <div class="lado-esquerdo">
+<<<<<<< HEAD
+      <h2>Desenvolvimento de sistemas</h2>
+      <img src="paragrafo_1_banner.jpg" alt="Desenvolvimento de sistemas" class="img-banner">
+=======
       <div class="titulo-bloco">
         <h2>Desenvolvimento de<br><span>sistemas</span></h2>
         <img src="imagem5.png" alt="Desenvolvimento de sistemas" class="img-banner">
       </div>
 
+>>>>>>> d98f015701e57a389a7bc64b1ab6bd94048c47df
       <p class="redes-sociais">
         Siga-nos no 
         <a href="#">Facebook</a> 
@@ -153,8 +184,9 @@
       </p>
     </div>
 
-    <!-- Login e Cadastro à direita -->
+    <!-- Lado Direito -->
     <div class="lado-direito">
+      
       <!-- Login -->
       <div class="box-form login">
         <h3>Área do Usuário</h3>
@@ -168,15 +200,24 @@
 
       <!-- Cadastro -->
       <div class="box-form cadastro-email">
-        <h3>Cadastre seu endereço de e-mail para receber novidades e atualizações.</h3>
-        <form id="form-email">
-          <input type="email" id="email" placeholder="Endereço de e-mail" required />
-          <button type="submit">Cadastre-se</button>
-        </form>
-        <p id="mensagem-sucesso" class="mensagem"></p>
-      </div>
-    </div>
+  <h3>Cadastre seu endereço de e-mail para receber novidades e atualizações.</h3>
 
+  <!-- Etapa 1: apenas e-mail -->
+  <form id="form-email">
+    <input type="email" id="email" placeholder="Endereço de e-mail" required />
+    <button type="submit">Próximo</button>
+  </form>
+
+  <!-- Etapa 2: senha (oculta até o usuário enviar o e-mail) -->
+  <form id="form-senha" style="display:none;">
+    <input type="password" id="senha-cadastro" placeholder="Crie uma senha" required />
+    <button type="submit">Concluir cadastro</button>
+  </form>
+
+  <p id="mensagem-sucesso" class="mensagem"></p>
+</div>
+
+    </div>
   </div>
 </section>
 
