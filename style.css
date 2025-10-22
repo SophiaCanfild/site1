@@ -1,4 +1,5 @@
- /* Reset e base */
+/* Reset e base */
+
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102836}
 
@@ -35,7 +36,7 @@ button {
   font-family: 'Georgia', serif;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  }
+}
 
 button:hover {
   background-color: #e6d79f;
@@ -73,12 +74,12 @@ section{padding-top:40px;padding-bottom:60px}
   background-size:contain; /* mostra a imagem inteira sem cortar */
   opacity:1;
   pointer-events:none;
-          }
+}
 
 /* Linha divisória sutil (abaixo da imagem) */
 .atividades::after{content:"";position:absolute;left:6%;right:6%;bottom:-2px;height:2px;background:rgba(255,255,255,0.06);z-index:3}
 
-  /* --- CONTATO (Seção 4) --- */
+/* --- CONTATO (Seção 4) --- */
 .contato{background:oklch(70.552% 0.02639 209.415);display:flex;justify-content:center}
 .contato-inner{width:1100px;display:flex;gap:40px;align-items:flex-start}
 
@@ -213,7 +214,7 @@ input[type="submit"] {
 
 .redes-sociais a:hover {
   color: #e4d6a7;
-        }
+}
 
 /* ======== LADO DIREITO ======== */
 .lado-direito {
@@ -223,7 +224,7 @@ input[type="submit"] {
   gap: 30px;
   align-items: center;
   min-width: 300px;
-    }
+}
 
 /* Formulários (Login + Cadastro) */
 .box-form {
@@ -299,34 +300,4 @@ input[type="submit"] {
     text-align: center;
     gap: 40px;
   }
-}
-#form-senha {
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-#form-senha input {
-  width: 240px;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-#form-senha button {
-  background-color: #e4d6a7;
-  color: #111;
-  border: none;
-  border-radius: 40px;
-  padding: 12px 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  }
-
-#form-senha button:hover {
-  background-color: #d9c98e;
-  transform: scale(1.05);
 }
