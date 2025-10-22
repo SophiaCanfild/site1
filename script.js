@@ -1,3 +1,6 @@
+// ===============================
+// CÓDIGO FINAL CORRIGIDO
+// ===============================
 document.addEventListener("DOMContentLoaded", function () {
   // ===============================
   // CARTÕES COM ANIMAÇÃO DE GIRO
@@ -13,18 +16,19 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   } catch (err) {
-    console.error("Erro nos cartões:", err);
+    console.error("Erro no bloco de cartões:", err);
   }
 
   // ===============================
-  // REDES SOCIAIS
+  // REDES SOCIAIS (ICONS CLICK)
   // ===============================
   try {
     const icones = document.querySelectorAll(".social-icons img");
     icones.forEach(img => {
       img.addEventListener("click", function () {
-        let url = img.dataset.link || "";
-        const nome = (img.alt || "").toLowerCase();
+        const dataLink = img.getAttribute("data-link");
+        const nome = (img.alt || img.src || "").toLowerCase();
+        let url = dataLink || "";
 
         if (!url) {
           if (nome.includes("insta")) url = "https://www.instagram.com/colegioszymanski";
@@ -36,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   } catch (err) {
-    console.error("Erro nas redes sociais:", err);
+    console.error("Erro no bloco de redes sociais:", err);
   }
 
   // ===============================
@@ -57,26 +61,22 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   } catch (err) {
-    console.error("Erro nos botões:", err);
+    console.error("Erro no bloco de animação de botões:", err);
   }
 
   // ===============================
   // FORMULÁRIO DE CONTATO
   // ===============================
   try {
-    const formContato = document.getElementById("form-contato");
+    const formContato = document.getElementById("form-contato") || document.querySelector("form");
     const botaoEnviar = document.getElementById("btn-enviar");
 
     if (formContato && botaoEnviar) {
       formContato.addEventListener("submit", function (e) {
         e.preventDefault();
-
-        let msgSucesso = formContato.querySelector(".msg-sucesso");
-        if (!msgSucesso) {
-          msgSucesso = document.createElement("p");
-          msgSucesso.className = "msg-sucesso";
-          formContato.appendChild(msgSucesso);
-        }
+        let msgSucesso = formContato.querySelector(".msg-sucesso") || document.createElement("p");
+        msgSucesso.className = "msg-sucesso";
+        formContato.appendChild(msgSucesso);
 
         msgSucesso.textContent = "✅ Mensagem enviada com sucesso!";
         msgSucesso.classList.add("mostrar");
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   } catch (err) {
-    console.error("Erro no formulário de contato:", err);
+    console.error("Erro no bloco de formulário de contato:", err);
   }
 
   // ===============================
@@ -106,16 +106,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const senha = document.getElementById("senha")?.value.trim() || "";
 
         if (usuario === usuarioValido && senha === senhaValida) {
-          mostrarMensagem(msgLogin, "✅ Login realizado com sucesso!", "#a9e4a9");
+          mostrarMensagem(msgLogin, "Login realizado com sucesso! ✅", "#a9e4a9");
         } else {
-          mostrarMensagem(msgLogin, "❌ Usuário ou senha incorretos.", "#ffaaaa");
+          mostrarMensagem(msgLogin, "Usuário ou senha incorretos ❌", "#ffaaaa");
         }
-
         formLogin.reset();
       });
     }
   } catch (err) {
-    console.error("Erro no login:", err);
+    console.error("Erro no bloco de login:", err);
   }
 
   // ===============================
@@ -126,35 +125,36 @@ document.addEventListener("DOMContentLoaded", function () {
     const formSenha = document.getElementById("form-senha");
     const msgEmail = document.getElementById("mensagem-sucesso");
 
-    if (formEmail && formSenha && msgEmail) {
+    if (formEmail && msgEmail) {
       formEmail.addEventListener("submit", (e) => {
         e.preventDefault();
         const email = document.getElementById("email")?.value.trim() || "";
 
         if (email === "" || !email.includes("@")) {
-          mostrarMensagem(msgEmail, "⚠️ Por favor, insira um e-mail válido.", "#ffaaaa");
+          mostrarMensagem(msgEmail, "Por favor, insira um e-mail válido.", "#ffaaaa");
           return;
         }
 
-        // Avança para senha
+        // Passa para a etapa da senha
         formEmail.style.display = "none";
         formSenha.style.display = "flex";
         mostrarMensagem(msgEmail, "E-mail válido! Agora crie uma senha 🔒", "#a9e4a9");
       });
+    }
 
+    if (formSenha && msgEmail) {
       formSenha.addEventListener("submit", (e) => {
         e.preventDefault();
         const senha = document.getElementById("senha-cadastro")?.value.trim() || "";
 
         if (senha.length < 4) {
-          mostrarMensagem(msgEmail, "⚠️ A senha deve ter pelo menos 4 caracteres.", "#ffaaaa");
+          mostrarMensagem(msgEmail, "A senha deve ter pelo menos 4 caracteres.", "#ffaaaa");
           return;
         }
 
-        // ✅ Mensagem de sucesso
         mostrarMensagem(msgEmail, "✅ Conta criada com sucesso!", "#a9e4a9");
 
-        // Simula redirecionamento
+        // Redireciona após 2 segundos
         setTimeout(() => {
           window.location.href = "pagina-principal.html";
         }, 2000);
@@ -163,21 +163,24 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   } catch (err) {
-    console.error("Erro no cadastro:", err);
+    console.error("Erro no bloco de cadastro de e-mail:", err);
   }
 
   // ===============================
-  // FUNÇÃO PARA EXIBIR MENSAGENS
+  // FUNÇÃO GENÉRICA PARA MENSAGENS
   // ===============================
   function mostrarMensagem(elemento, texto, cor) {
     if (!elemento) return;
     elemento.textContent = texto;
-    elemento.style.color = cor || "#000";
+    elemento.style.color = cor || "";
     elemento.classList.add("visivel");
 
     if (elemento.timeout) clearTimeout(elemento.timeout);
     elemento.timeout = setTimeout(() => {
       elemento.classList.remove("visivel");
+      elemento.timeout = null;
     }, 4000);
   }
+
+  window.mostrarMensagem = mostrarMensagem;
 });
